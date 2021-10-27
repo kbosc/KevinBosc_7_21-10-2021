@@ -1,0 +1,16 @@
+.components-wrapper {
+  display: flex;
+  .component {
+    color: white;
+    display: flex;
+    background-color: $ingredients-color;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    @extend %radius;
+    img {
+      margin: 0 0.5rem 0 1rem;
+      cursor: pointer;
+    }
+    // @extend %component;
+  }
+}

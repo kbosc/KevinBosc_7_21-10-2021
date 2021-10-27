@@ -1,0 +1,376 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les Petits Plats</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="./img/logo/logo.png" alt="Toque de chef (Logo)" />
+      <h1>Les petits plats</h1>
+    </header>
+    <nav>
+      <input
+        type="text"
+        placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+      />
+      <img
+        src="./img/svg/search-icon.svg"
+        alt="magnifying glass that launches the search"
+      />
+    </nav>
+    <div class="components-wrapper">
+      <div class="component">
+        <p class="component__name">Coco</p>
+        <img
+          src="./img/svg/cross.svg"
+          alt=""
+          aria-label="cross that closes the selection"
+        />
+      </div>
+    </div>
+    <!-- <div class="selections-wrapper">
+      <div class="selections">
+        <p class="selections__ingredients">Ingrédients</p>
+        <input type="text" placeholder="Recherche un ingrédient" />
+        <img src="./img/svg/chevron.svg" alt="arrows for drop-down menu" />
+      </div>
+      <div class="selections">
+        <p class="selections__devices">Appareil</p>
+        <img src="./img/svg/chevron.svg" alt="arrows for drop-down menu" />
+      </div>
+      <div class="selections">
+        <p class="selections__utensils">Ustensiles</p>
+        <img src="./img/svg/chevron.svg" alt="arrows for drop-down menu" />
+      </div>
+    </div> -->
+
+    <div class="selections-wrapper">
+      <div class="selections">
+        <input type="text" placeholder="Recherche un ingrédient" />
+        <img src="./img/svg/chevron.svg" alt="arrows for drop-down menu" />
+      </div>
+      <div class="selections">
+        <input type="text" placeholder="Recherche un Appareil" />
+        <img src="./img/svg/chevron.svg" alt="arrows for drop-down menu" />
+      </div>
+      <div class="selections">
+        <input type="text" placeholder="Recherche un Ustensiles" />
+        <img src="./img/svg/chevron.svg" alt="arrows for drop-down menu" />
+      </div>
+    </div>
+    <main>
+      <div class="recipes">
+        <div class="recipes__img"></div>
+        <div class="recipes__resume">
+          <div class="recipes__resume__up">
+            <h2 class="recipes__resume__up__name">Limonade de Coco</h2>
+            <p>
+              <img
+                src="./img/svg/clock.svg"
+                alt="horloge pour définir le temps de préparation"
+              />
+              <span class="recipes__resume__up__time"> 10 </span>min
+            </p>
+          </div>
+          <div class="recipes__resume__bottom">
+            <ul class="recipes__resume__bottom__ingredients">
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+            </ul>
+            <div class="recipes__resume__bottom__description">
+              <p>
+                Mettre les glaçons à votre goût dans le blender, ajouter le
+                lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer
+                jusqu'à avoir la consistence désirée
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recipes">
+        <div class="recipes__img"></div>
+        <div class="recipes__resume">
+          <div class="recipes__resume__up">
+            <h2 class="recipes__resume__up__name">Limonade de Coco</h2>
+            <p>
+              <img
+                src="./img/svg/clock.svg"
+                alt="horloge pour définir le temps de préparation"
+              />
+              <span class="recipes__resume__up__time"> 10 </span>min
+            </p>
+          </div>
+          <div class="recipes__resume__bottom">
+            <ul class="recipes__resume__bottom__ingredients">
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+            </ul>
+            <div class="recipes__resume__bottom__description">
+              <p>
+                Découper le poulet en morceaux, les faire dorer dans une cocotte
+                avec de l'huile d'olive. Salez et poivrez. Une fois doré,
+                laisser cuire en ajoutant de l'eau. Au bout de 30 minutes,
+                ajouter le coulis de tomate, le lait de coco ainsi que le
+                poivron et l'oignon découpés en morceaux. Laisser cuisiner 30
+                minutes de plus. Servir avec du riz
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recipes">
+        <div class="recipes__img"></div>
+        <div class="recipes__resume">
+          <div class="recipes__resume__up">
+            <h2 class="recipes__resume__up__name">Limonade de Coco</h2>
+            <p>
+              <img
+                src="./img/svg/clock.svg"
+                alt="horloge pour définir le temps de préparation"
+              /><span class="recipes__resume__up__time"> 10 </span>min
+            </p>
+          </div>
+          <div class="recipes__resume__bottom">
+            <ul class="recipes__resume__bottom__ingredients">
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+            </ul>
+            <div class="recipes__resume__bottom__description">
+              <p>
+                Découper le thon en dés, mettre dans un plat et recouvrir de jus
+                de citron vert (mieux vaut prendre un plat large et peu
+                profond). Laisser reposer au réfrigérateur au moins 2 heures.
+                (Si possible faites-le le soir pour le lendemain. Après avoir
+                laissé mariner le poisson, coupez le concombre en fines
+                rondelles sans la peau et les tomates en prenant soin de retirer
+                les pépins. Rayer la carotte. Ajouter les légumes au poissons
+                avec le citron cette fois ci dans un Saladier. Ajouter le lait
+                de coco. Pour ajouter un peu plus de saveur vous pouver ajouter
+                1 à 2 cuillères à soupe de Crème de coco
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recipes">
+        <div class="recipes__img"></div>
+        <div class="recipes__resume">
+          <div class="recipes__resume__up">
+            <h2 class="recipes__resume__up__name">Limonade de Coco</h2>
+            <p>
+              <img
+                src="./img/svg/clock.svg"
+                alt="horloge pour définir le temps de préparation"
+              /><span class="recipes__resume__up__time"> 10 </span>min
+            </p>
+          </div>
+          <div class="recipes__resume__bottom">
+            <ul class="recipes__resume__bottom__ingredients">
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+            </ul>
+            <div class="recipes__resume__bottom__description">
+              <p>
+                Découper le thon en dés, mettre dans un plat et recouvrir de jus
+                de citron vert (mieux vaut prendre un plat large et peu
+                profond). Laisser reposer au réfrigérateur au moins 2 heures.
+                (Si possible faites-le le soir pour le lendemain. Après avoir
+                laissé mariner le poisson, coupez le concombre en fines
+                rondelles sans la peau et les tomates en prenant soin de retirer
+                les pépins. Rayer la carotte. Ajouter les légumes au poissons
+                avec le citron cette fois ci dans un Saladier. Ajouter le lait
+                de coco. Pour ajouter un peu plus de saveur vous pouver ajouter
+                1 à 2 cuillères à soupe de Crème de coco
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recipes">
+        <div class="recipes__img"></div>
+        <div class="recipes__resume">
+          <div class="recipes__resume__up">
+            <h2 class="recipes__resume__up__name">Limonade de Coco</h2>
+            <p>
+              <img
+                src="./img/svg/clock.svg"
+                alt="horloge pour définir le temps de préparation"
+              /><span class="recipes__resume__up__time"> 10 </span>min
+            </p>
+          </div>
+          <div class="recipes__resume__bottom">
+            <ul class="recipes__resume__bottom__ingredients">
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+            </ul>
+            <div class="recipes__resume__bottom__description">
+              <p>
+                Découper le thon en dés, mettre dans un plat et recouvrir de jus
+                de citron vert (mieux vaut prendre un plat large et peu
+                profond). Laisser reposer au réfrigérateur au moins 2 heures.
+                (Si possible faites-le le soir pour le lendemain. Après avoir
+                laissé mariner le poisson, coupez le concombre en fines
+                rondelles sans la peau et les tomates en prenant soin de retirer
+                les pépins. Rayer la carotte. Ajouter les légumes au poissons
+                avec le citron cette fois ci dans un Saladier. Ajouter le lait
+                de coco. Pour ajouter un peu plus de saveur vous pouver ajouter
+                1 à 2 cuillères à soupe de Crème de coco
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recipes">
+        <div class="recipes__img"></div>
+        <div class="recipes__resume">
+          <div class="recipes__resume__up">
+            <h2 class="recipes__resume__up__name">Limonade de Coco</h2>
+            <p>
+              <img
+                src="./img/svg/clock.svg"
+                alt="horloge pour définir le temps de préparation"
+              /><span class="recipes__resume__up__time"> 10 </span>min
+            </p>
+          </div>
+          <div class="recipes__resume__bottom">
+            <ul class="recipes__resume__bottom__ingredients">
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+              <li>
+                <span class="recipes-ingredient">Lait de coco</span>:
+                <span class="recipes-quantity">400</span>
+                <span class="recipes-unit">ml</span>
+              </li>
+            </ul>
+            <div class="recipes__resume__bottom__description">
+              <p>
+                Découper le thon en dés, mettre dans un plat et recouvrir de jus
+                de citron vert (mieux vaut prendre un plat large et peu
+                profond). Laisser reposer au réfrigérateur au moins 2 heures.
+                (Si possible faites-le le soir pour le lendemain. Après avoir
+                laissé mariner le poisson, coupez le concombre en fines
+                rondelles sans la peau et les tomates en prenant soin de retirer
+                les pépins. Rayer la carotte. Ajouter les légumes au poissons
+                avec le citron cette fois ci dans un Saladier. Ajouter le lait
+                de coco. Pour ajouter un peu plus de saveur vous pouver ajouter
+                1 à 2 cuillères à soupe de Crème de coco
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

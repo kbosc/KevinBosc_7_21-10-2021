@@ -1,0 +1,10 @@
+@mixin responsive-medium {
+  @media screen and (max-width: 910px) {
+    @content;
+  }
+}
+
+@mixin font-family($s: 20, $w: 400) {
+  font-size: $s + px;
+  font-weight: $w;
+}
