@@ -1,12 +1,12 @@
 .recipes {
   width: 25vw;
-  height: 30vh;
+  height: 28vh;
   //   @extend %radius;
   border-radius: 2%;
   overflow: hidden;
   margin-bottom: 3rem;
   &__img {
-    height: 45%;
+    height: 50%;
     background-color: $background-img-card;
   }
   &__resume {
