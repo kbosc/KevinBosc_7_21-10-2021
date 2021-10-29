@@ -1,5 +1,8 @@
 .components-wrapper {
   display: flex;
+  @include responsive-medium() {
+    flex-wrap: wrap;
+  }
   .component {
     color: white;
     display: flex;
@@ -7,6 +10,9 @@
     margin-right: 1rem;
     padding: 0.5rem;
     @extend %radius;
+    @include responsive-medium() {
+      margin: 0 1rem 0.5rem 0;
+    }
     img {
       margin: 0 0.5rem 0 1rem;
       cursor: pointer;

@@ -2,12 +2,21 @@
   margin: 1rem 0 2rem 0;
   height: 4rem;
   display: flex;
+  @include responsive-medium() {
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    height: auto;
+  }
   .selections {
     position: relative;
     align-items: center;
     color: white;
     display: flex;
     margin-right: 1.5rem;
+    @include responsive-medium() {
+      width: 100%;
+      margin: 0 0 0.5rem 0;
+    }
     img {
       cursor: pointer;
       position: absolute;
@@ -19,9 +28,7 @@
       height: 100%;
       border: 0;
       padding: 1rem;
-      & textarea {
-        color: white;
-      }
+      color: white;
       &:focus {
         outline: none;
         &::placeholder {
@@ -29,7 +36,6 @@
         }
       }
       &::placeholder {
-        //   padding-right: 2rem;
         border: none;
         color: white;
       }

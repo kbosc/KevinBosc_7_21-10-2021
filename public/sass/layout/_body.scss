@@ -6,7 +6,7 @@ body {
   font-family: "Lato", sans-serif;
   padding: 6rem;
   padding-top: 2rem;
-  //   @include responsive-medium {
-  //     padding: 0;
-  //   }
+  @include responsive-medium() {
+    padding: 1rem 0.2rem 0 0.2rem;
+  }
 }
