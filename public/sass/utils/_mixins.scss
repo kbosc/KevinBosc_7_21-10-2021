@@ -8,3 +8,10 @@
 //   font-size: $s + px;
 //   font-weight: $w;
 // }
+
+@mixin paragraph-ellipsis($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
