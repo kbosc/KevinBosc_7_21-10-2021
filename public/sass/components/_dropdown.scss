@@ -1,0 +1,84 @@
+.dropdown {
+  background-color: lime;
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  overflow: hidden;
+  & .dpd {
+    width: 20%;
+    & button {
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      & input {
+        height: 100%;
+        border: 0;
+        color: white;
+        &:focus {
+          outline: none;
+          &::placeholder {
+            color: darken(white, 10%);
+          }
+        }
+        &::placeholder {
+          border: none;
+          color: white;
+        }
+      }
+      & img {
+        cursor: pointer;
+        transition: 0.3s;
+      }
+    }
+    & .block-links {
+      transition: height 0.3s ease-in-out;
+      display: none;
+      height: 0;
+      & ul {
+        padding-left: 1rem;
+        // TEST/////////////////////////////////////////////////////////////////
+        // display: flex;
+        // flex-direction: column;
+        // flex-wrap: wrap;
+        // TEST/////////////////////////////////////////////////////////////////
+        & li {
+          list-style-type: none;
+          padding: 0.2rem 2rem 0.2rem 0;
+          cursor: pointer;
+          color: white;
+          &:last-child {
+            padding-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
+  &__ingredient > * {
+    @extend %radius;
+    background-color: $ingredients-color;
+    & input {
+      background-color: $ingredients-color;
+    }
+  }
+  &__appareil > * {
+    @extend %radius;
+    background-color: $appareil-color;
+    & input {
+      background-color: $appareil-color;
+    }
+  }
+  &__ustensiles > * {
+    @extend %radius;
+    background-color: $ustensiles-color;
+    & input {
+      background-color: $ustensiles-color;
+    }
+  }
+}
+.rotate {
+  transform: rotate(180deg);
+}

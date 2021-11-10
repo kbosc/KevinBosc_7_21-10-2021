@@ -1,6 +1,6 @@
 const recipesWrapper = document.querySelector("main");
 const valueMainBar = document.querySelector("nav input");
-const dropDownIngredient = document.querySelector("#selections-ingredient");
+// const dropDownIngredient = document.querySelector("#selections-ingredient");
 const dropDownAppareil = document.querySelector("#selections-appareil");
 const dropDownUstensiles = document.querySelector("#selections-ustensiles");
 
@@ -17,8 +17,8 @@ document.addEventListener(onFetchData.name, (e) => {
     }
   });
   ///////////////////////////////////////////////////
-  dropDownIngredient.addEventListener("click", () => {
-    console.log("coucou");
-  });
+  // dropDownIngredient.addEventListener("click", () => {
+  //   console.log("coucou");
+  // });
 });
 /////////////////////////////////////////////////////////////////////////////
