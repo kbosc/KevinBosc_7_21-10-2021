@@ -7,6 +7,7 @@
   & .dpd {
     width: 20%;
     & button {
+      @extend %radius;
       padding: 1rem;
       width: 100%;
       border: none;
@@ -38,6 +39,9 @@
       transition: height 0.3s ease-in-out;
       display: none;
       height: 0;
+      border-radius: 0px 0 8px 8px;
+      // margin-top: -0.2rem;
+      // padding-top: -0.2rem;
       & ul {
         padding-left: 1rem;
         // TEST/////////////////////////////////////////////////////////////////
@@ -58,7 +62,7 @@
     }
   }
   &__ingredient > * {
-    @extend %radius;
+    // @extend %radius;
     background-color: $ingredients-color;
     & input {
       background-color: $ingredients-color;
