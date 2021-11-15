@@ -1,4 +1,4 @@
-function RecipesMainBar(recipes) {
+function recipesMainBar(recipes) {
   const html = recipes.reduce((acc, recipe) => {
     let isMatchIngredient = false;
     recipe.ingredients.map((ingredient) => {

@@ -6,19 +6,22 @@ const dropDownUstensiles = document.querySelector("#selections-ustensiles");
 
 document.addEventListener(onFetchData.name, (e) => {
   const { data } = e;
-  console.log(data);
-  recipesWrapper.innerHTML = RecipesCardsFactory(data.recipes);
+  // console.log(data);
+  recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
   valueMainBar.addEventListener("keyup", () => {
     if (valueMainBar.value.length > 2) {
-      recipesWrapper.innerHTML = RecipesMainBar(data.recipes);
+      recipesWrapper.innerHTML = recipesMainBar(data.recipes);
     }
     if (valueMainBar.value.length <= 2) {
-      recipesWrapper.innerHTML = RecipesCardsFactory(data.recipes);
+      recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
     }
   });
-  ///////////////////////////////////////////////////
-  // dropDownIngredient.addEventListener("click", () => {
-  //   console.log("coucou");
-  // });
+  //////////////////////////////////////////////
+  // console.log(data.recipes);
+  // ulIngredient.innerHTML = liIngredient(data.recipes);
+  ulIngredient.appendChild(liIngredient(data.recipes));
 });
 /////////////////////////////////////////////////////////////////////////////
+ulIngredient = document.querySelector(".dropdown__ingredient .block-links ul");
+ulAppareil = document.querySelector(".dropdown__appareil .block-links ul");
+ulUstensiles = document.querySelector(".dropdown__ustensiles .block-links ul");

@@ -11,14 +11,14 @@ function toggleDropDown() {
       if (btn.className == "active") {
         btn.nextElementSibling.style.height = 0;
         btn.nextElementSibling.style.margin = "0";
-        console.log("condition dans la premiere condition");
+        // console.log("condition dans la premiere condition");
         if (btn.children[1].className == "rotate") {
           btn.children[1].classList.toggle("rotate");
-          console.log("conditionCeption");
+          // console.log("conditionCeption");
         }
       }
     });
-    console.log("premiere condition");
+    // console.log("premiere condition");
     this.nextElementSibling.style.margin = "-0.2rem 0";
     this.nextElementSibling.style.display = "block";
     this.nextElementSibling.style.height = `${this.nextElementSibling.scrollHeight}px`;
@@ -27,7 +27,7 @@ function toggleDropDown() {
     this.classList.remove("active");
     return;
   }
-  console.log("else premiere condition");
+  // console.log("else premiere condition");
   this.nextElementSibling.style.height = 0;
   icon.classList.toggle("rotate");
   this.classList.add("active");
