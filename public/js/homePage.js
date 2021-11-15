@@ -16,12 +16,10 @@ document.addEventListener(onFetchData.name, (e) => {
       recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
     }
   });
+  liIngredient(data.recipes);
+  liUstensiles(data.recipes);
+  liAppareil(data.recipes);
   //////////////////////////////////////////////
-  // console.log(data.recipes);
-  // ulIngredient.innerHTML = liIngredient(data.recipes);
-  ulIngredient.appendChild(liIngredient(data.recipes));
+  console.log(data.recipes);
 });
 /////////////////////////////////////////////////////////////////////////////
-ulIngredient = document.querySelector(".dropdown__ingredient .block-links ul");
-ulAppareil = document.querySelector(".dropdown__appareil .block-links ul");
-ulUstensiles = document.querySelector(".dropdown__ustensiles .block-links ul");
