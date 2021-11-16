@@ -20,6 +20,24 @@ document.addEventListener(onFetchData.name, (e) => {
   liUstensiles(data.recipes);
   liAppareil(data.recipes);
   //////////////////////////////////////////////
-  console.log(data.recipes);
+  // console.log(data.recipes);
 });
 /////////////////////////////////////////////////////////////////////////////
+const items = document.querySelectorAll(
+  ".dropdown__ingredient .block-links ul li"
+);
+let tab = [];
+let index = "";
+
+// add values to the array
+for (let i = 0; i < items.length; i++) {
+  tab.push(items[i].innerHTML);
+}
+
+// get selected element index
+for (let i = 0; i < items.length; i++) {
+  items[i].onclick = function () {
+    index = tab.indexOf(this.innerHTML);
+    console.log(this.innerHTML + " Index = " + index);
+  };
+}

@@ -1,12 +1,14 @@
 .dropdown {
-  background-color: lime;
+  // background-color: lime;
   display: flex;
   gap: 1rem;
   margin: 1rem 0;
   overflow: hidden;
   & .dpd {
     width: 20%;
+    transition: width 0.3s ease-in-out;
     & button {
+      position: relative;
       @extend %radius;
       padding: 1rem;
       width: 100%;
@@ -36,33 +38,44 @@
       }
     }
     & .block-links {
+      position: fixed;
+      max-height: 30%;
       transition: height 0.3s ease-in-out;
       display: none;
       height: 0;
       border-radius: 0px 0 8px 8px;
-      // margin-top: -0.2rem;
-      // padding-top: -0.2rem;
+      ////////
+      display: block;
+      width: inherit;
+      // width: 34%;
+      margin: -0.2rem 0;
       & ul {
+        z-index: 10;
+        gap: 0.5rem;
         padding-left: 1rem;
-        // TEST/////////////////////////////////////////////////////////////////
-        // display: flex;
-        // flex-direction: column;
-        // flex-wrap: wrap;
-        // TEST/////////////////////////////////////////////////////////////////
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        // width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
         & li {
           list-style-type: none;
-          padding: 0.2rem 2rem 0.2rem 0;
+          // padding: 0.2rem 2rem 0.2rem 0;
           cursor: pointer;
           color: white;
           &:last-child {
-            padding-bottom: 1rem;
+            // padding-bottom: 1rem;
           }
         }
       }
     }
   }
+  & .dropdown-open {
+    width: 45%;
+  }
   &__ingredient > * {
-    // @extend %radius;
     background-color: $ingredients-color;
     & input {
       background-color: $ingredients-color;
