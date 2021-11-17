@@ -1,5 +1,6 @@
 .components-wrapper {
   display: flex;
+  flex-wrap: wrap;
   @include responsive-medium() {
     flex-wrap: wrap;
   }
@@ -7,7 +8,7 @@
     color: white;
     display: flex;
     background-color: $ingredients-color;
-    margin-right: 1rem;
+    margin: 0 1rem 0.5rem 0;
     padding: 0.5rem;
     @extend %radius;
     @include responsive-medium() {

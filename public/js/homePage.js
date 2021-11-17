@@ -16,28 +16,66 @@ document.addEventListener(onFetchData.name, (e) => {
       recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
     }
   });
-  liIngredient(data.recipes);
-  liUstensiles(data.recipes);
-  liAppareil(data.recipes);
+  liIngredientGenerator(data.recipes);
+  liUstensilesGenerator(data.recipes);
+  liAppareilGenerator(data.recipes);
+  const liIngredient = document.querySelectorAll(
+    ".dropdown__ingredient .block-links ul li"
+  );
+  liIngredient.forEach(function (item) {
+    item.addEventListener("click", function () {
+      addComponents(item);
+    });
+  });
   //////////////////////////////////////////////
-  // console.log(data.recipes);
+  const componentsItems = document.querySelectorAll(
+    ".components-wrapper .component"
+  );
+  // componentsItems.forEach(function (item) {
+  //   item.addEventListener("click", function () {
+  //     removeComponents(item);
+  //   });
+  // });
+  // componentsWrapper.addEventListener("click", function (event) {
+  //   console.log(event);
+  //   // Remove the element that triggered the event in the first place
+  //   // componentsWrapper.removeChild(event.target);
+  //   componentsItems.forEach(function (item) {
+  //     console.log(item);
+  //     item.addEventListener("click", function (item) {
+  //       // removeComponents(item);
+  //       console.log(item);
+  //     });
+  //   });
+  // });
+  componentsWrapper.addEventListener("click", function (item) {
+    let initElem = item.target;
+    if (initElem.className == "cross-item") {
+      console.log(item.target.parentNode);
+      item.target.parentNode.remove();
+    }
+  });
 });
-/////////////////////////////////////////////////////////////////////////////
-const items = document.querySelectorAll(
-  ".dropdown__ingredient .block-links ul li"
-);
-let tab = [];
-let index = "";
-
-// add values to the array
-for (let i = 0; i < items.length; i++) {
-  tab.push(items[i].innerHTML);
+const componentsWrapper = document.querySelector(".components-wrapper");
+function addComponents(item) {
+  const div = document.createElement("div");
+  componentsWrapper.appendChild(div);
+  div.classList.add("component");
+  div.innerHTML = `
+     <p class="component__name">${item.textContent}</p>
+     <img
+      class="cross-item"
+      src="./img/svg/cross.svg"
+      alt=""
+      aria-label="cross that closes the selection"
+     />
+   `;
+  item.remove();
+  item.style.display == "none";
+  console.log(item);
 }
 
-// get selected element index
-for (let i = 0; i < items.length; i++) {
-  items[i].onclick = function () {
-    index = tab.indexOf(this.innerHTML);
-    console.log(this.innerHTML + " Index = " + index);
-  };
-}
+// function removeComponents(item) {
+//   console.log(item);
+//   // item.target.style.visibility = "hidden";
+// }

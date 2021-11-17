@@ -2,7 +2,7 @@ ulIngredient = document.querySelector(".dropdown__ingredient .block-links ul");
 ulAppareil = document.querySelector(".dropdown__appareil .block-links ul");
 ulUstensiles = document.querySelector(".dropdown__ustensiles .block-links ul");
 ////////////////////////////////////////
-function liIngredient(recipes) {
+function liIngredientGenerator(recipes) {
   let arrayIngredient = [];
   recipes.reduce((reducer, recipe) => {
     recipe.ingredients.reduce((reducer, ingredient) => {
@@ -16,7 +16,7 @@ function liIngredient(recipes) {
     ulIngredient.appendChild(item);
   }
 }
-function liAppareil(recipes) {
+function liAppareilGenerator(recipes) {
   let arrayAppareil = [];
   recipes.reduce((reducer, recipe) => {
     arrayAppareil.push(String([recipe.appliance.toLowerCase()]));
@@ -28,7 +28,7 @@ function liAppareil(recipes) {
     ulAppareil.appendChild(item);
   }
 }
-function liUstensiles(recipes) {
+function liUstensilesGenerator(recipes) {
   let arrayUstensile = [];
   recipes.reduce((reducer, recipe) => {
     recipe.ustensils.reduce((reducer, ustensil) => {

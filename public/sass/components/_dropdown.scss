@@ -8,7 +8,7 @@
     width: 20%;
     transition: width 0.3s ease-in-out;
     & button {
-      position: relative;
+      // position: relative;
       @extend %radius;
       padding: 1rem;
       width: 100%;
@@ -38,13 +38,12 @@
       }
     }
     & .block-links {
-      position: fixed;
-      max-height: 30%;
+      position: absolute;
+      // max-height: 30%;
       transition: height 0.3s ease-in-out;
       display: none;
       height: 0;
       border-radius: 0px 0 8px 8px;
-      ////////
       display: block;
       width: inherit;
       // width: 34%;
@@ -56,8 +55,10 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        align-content: flex-start;
         height: 100%;
         // width: 100%;
+        // max-height: 30%;
         overflow: hidden;
         text-overflow: ellipsis;
         & li {
