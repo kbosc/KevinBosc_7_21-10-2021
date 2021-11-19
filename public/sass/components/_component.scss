@@ -7,7 +7,7 @@
   .component {
     color: white;
     display: flex;
-    background-color: $ingredients-color;
+
     margin: 0 1rem 0.5rem 0;
     padding: 0.5rem;
     @extend %radius;
@@ -19,5 +19,14 @@
       cursor: pointer;
     }
     // @extend %component;
+  }
+  .component-ingredient {
+    background-color: $ingredients-color;
+  }
+  .component-appareil {
+    background-color: $appareil-color;
+  }
+  .component-ustensiles {
+    background-color: $ustensiles-color;
   }
 }

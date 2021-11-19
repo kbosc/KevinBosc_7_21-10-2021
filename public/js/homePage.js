@@ -1,6 +1,5 @@
 const recipesWrapper = document.querySelector("main");
 const valueMainBar = document.querySelector("nav input");
-// const dropDownIngredient = document.querySelector("#selections-ingredient");
 const dropDownAppareil = document.querySelector("#selections-appareil");
 const dropDownUstensiles = document.querySelector("#selections-ustensiles");
 
@@ -19,6 +18,7 @@ document.addEventListener(onFetchData.name, (e) => {
   liIngredientGenerator(data.recipes);
   liUstensilesGenerator(data.recipes);
   liAppareilGenerator(data.recipes);
+  // add les ingrédients à la barre des components et supprimer des li
   const liIngredient = document.querySelectorAll(
     ".dropdown__ingredient .block-links ul li"
   );
@@ -27,55 +27,25 @@ document.addEventListener(onFetchData.name, (e) => {
       addComponents(item);
     });
   });
-  //////////////////////////////////////////////
-  const componentsItems = document.querySelectorAll(
-    ".components-wrapper .component"
+  const liAppareil = document.querySelectorAll(
+    ".dropdown__appareil .block-links ul li"
   );
-  // componentsItems.forEach(function (item) {
-  //   item.addEventListener("click", function () {
-  //     removeComponents(item);
-  //   });
-  // });
-  // componentsWrapper.addEventListener("click", function (event) {
-  //   console.log(event);
-  //   // Remove the element that triggered the event in the first place
-  //   // componentsWrapper.removeChild(event.target);
-  //   componentsItems.forEach(function (item) {
-  //     console.log(item);
-  //     item.addEventListener("click", function (item) {
-  //       // removeComponents(item);
-  //       console.log(item);
-  //     });
-  //   });
-  // });
-  componentsWrapper.addEventListener("click", function (item) {
-    let initElem = item.target;
-    if (initElem.className == "cross-item") {
-      console.log(item.target.parentNode);
-      item.target.parentNode.remove();
-    }
+  liAppareil.forEach(function (item) {
+    item.addEventListener("click", function () {
+      addComponents(item);
+    });
   });
+  const liUstensiles = document.querySelectorAll(
+    ".dropdown__ustensiles .block-links ul li"
+  );
+  liUstensiles.forEach(function (item) {
+    item.addEventListener("click", function () {
+      addComponents(item);
+    });
+  });
+  // remove components et les ajoutes aux li d'ingrédient
+  componentsWrapper.addEventListener("click", function (item) {
+    removeComponents(item);
+  });
+  //////////////////////////////////////////////
 });
-const componentsWrapper = document.querySelector(".components-wrapper");
-function addComponents(item) {
-  const div = document.createElement("div");
-  componentsWrapper.appendChild(div);
-  div.classList.add("component");
-  div.innerHTML = `
-     <p class="component__name">${item.textContent}</p>
-     <img
-      class="cross-item"
-      src="./img/svg/cross.svg"
-      alt=""
-      aria-label="cross that closes the selection"
-     />
-   `;
-  item.remove();
-  item.style.display == "none";
-  console.log(item);
-}
-
-// function removeComponents(item) {
-//   console.log(item);
-//   // item.target.style.visibility = "hidden";
-// }

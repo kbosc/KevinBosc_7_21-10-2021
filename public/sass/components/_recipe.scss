@@ -11,7 +11,24 @@
   margin-bottom: 3rem;
   &__img {
     height: 50%;
-    background-color: $background-img-card;
+    // background-color: $background-img-card;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+
+      background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+    &:hover::after {
+      opacity: 1;
+    }
   }
   &__resume {
     // padding: 1rem;
@@ -21,6 +38,9 @@
       padding: 0.5rem;
       display: flex;
       justify-content: space-between;
+      &__name {
+        max-width: 60%;
+      }
       p {
         font-weight: bold;
       }
@@ -49,4 +69,17 @@
       }
     }
   }
+  // &:hover {
+  //   &__img {
+  //     &::after {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 }
+
+// .recipes:hover {
+//   &__img::after {
+//     opacity: 1;
+//   }
+// }
