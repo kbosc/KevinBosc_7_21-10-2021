@@ -5,11 +5,12 @@ const dropDownUstensiles = document.querySelector("#selections-ustensiles");
 
 document.addEventListener(onFetchData.name, (e) => {
   const { data } = e;
-  // console.log(data);
+  console.log(data);
   recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
   valueMainBar.addEventListener("keyup", () => {
     if (valueMainBar.value.length > 2) {
       recipesWrapper.innerHTML = recipesMainBar(data.recipes);
+      // dynamicUlDropdown();
     }
     if (valueMainBar.value.length <= 2) {
       recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
@@ -18,7 +19,7 @@ document.addEventListener(onFetchData.name, (e) => {
   liIngredientGenerator(data.recipes);
   liUstensilesGenerator(data.recipes);
   liAppareilGenerator(data.recipes);
-  // add les ingrédients à la barre des components et supprimer des li
+  // add le li dropdown cliquer à la barre des components et supprimer le li de la dropdown
   const liIngredient = document.querySelectorAll(
     ".dropdown__ingredient .block-links ul li"
   );
@@ -43,9 +44,14 @@ document.addEventListener(onFetchData.name, (e) => {
       addComponents(item);
     });
   });
-  // remove components et les ajoutes aux li d'ingrédient
+  // remove components et les ajoutes aux li dropdown correspondant
   componentsWrapper.addEventListener("click", function (item) {
     removeComponents(item);
   });
+  // if ((valueMainBar.value.length = 0)) {
+  //   liIngredientGenerator(data.recipes);
+  //   liUstensilesGenerator(data.recipes);
+  //   liAppareilGenerator(data.recipes);
+  // }
   //////////////////////////////////////////////
 });

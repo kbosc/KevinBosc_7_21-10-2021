@@ -1,10 +1,10 @@
-const btnIngredient = document.querySelectorAll(".dpd button");
-btnIngredient.forEach((btn) => btn.addEventListener("click", toggleDropDown));
+const btnDropdown = document.querySelectorAll(".dpd button");
+btnDropdown.forEach((btn) => btn.addEventListener("click", toggleDropDown));
 
 function toggleDropDown() {
   const icon = this.querySelector("img");
   if (this.className == "active") {
-    btnIngredient.forEach((btn) => {
+    btnDropdown.forEach((btn) => {
       btn.classList.add("active");
       this.nextElementSibling.classList.remove("active");
 

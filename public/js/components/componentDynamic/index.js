@@ -10,6 +10,19 @@ function addComponents(item) {
   switch (true) {
     case itemParentClass.contains("dropdown__ingredient"):
       div.classList.add("component-ingredient");
+      // const ingredientCards = document.querySelectorAll(".recipes-ingredient");
+      // ingredientCards.forEach((e) => {
+      //   const componentSelected = e.innerText;
+      //   // console.log(componentSelected);
+      //   let cardParent =
+      //     e.parentNode.parentNode.parentNode.parentNode.parentNode;
+      //   // console.log(e.parentNode.parentNode.parentNode.parentNode.parentNode);
+      //   if (item.textContent !== componentSelected) {
+      //     // cardParent.style.display == "none";
+      //     // cardParent.remove();
+      //     console.log(cardParent.target);
+      //   }
+      // });
       break;
     case itemParentClass.contains("dropdown__appareil"):
       div.classList.add("component-appareil");
@@ -20,7 +33,7 @@ function addComponents(item) {
     default:
       console.log("li inconnu");
   }
-  //   injecte l'html en fonction de l'élément cliquer
+  //   injecte l'html component en fonction de l'élément cliquer
   div.innerHTML = `
   <p class="component__name">${item.textContent}</p>
   <img
@@ -31,10 +44,17 @@ function addComponents(item) {
   />
   `;
   // supprime l'élément cliquer de la dropdown
-  item.remove();
   // item.style.display = "none";
+  item.remove();
+  ///////////////
+
+  // console.log(ingredientCards);
 }
 
+// function componentCompareCard(item) {
+//   console.log(item.textContent);
+// }
+///////////////
 function removeComponents(item) {
   let initElem = item.target;
   //   suppression du component et creation d'un li dans le dropdown
@@ -49,22 +69,21 @@ function removeComponents(item) {
     // création du li dans sa dropdown en fonction de la class du parent target
     switch (true) {
       case elemParentClass.contains("component-ingredient"):
-        console.log("ingredient");
+        // console.log("ingredient");
         ulIngredient.appendChild(itemUl);
         break;
       case elemParentClass.contains("component-appareil"):
-        console.log("appareil");
+        // console.log("appareil");
         ulAppareil.appendChild(itemUl);
         break;
       case elemParentClass.contains("component-ustensiles"):
-        console.log("ustensiles");
+        // console.log("ustensiles");
         ulUstensiles.appendChild(itemUl);
         break;
       default:
-        console.log(elemParentClass);
         console.log("component inconnu");
     }
+    //   suppression du component
+    item.target.parentNode.remove();
   }
-  //   suppression du component
-  item.target.parentNode.remove();
 }

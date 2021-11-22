@@ -1,4 +1,8 @@
 function recipesMainBar(recipes) {
+  let ingredientArray = [];
+  let appareilArray = [];
+  let ustensileArray = [];
+  let newArray = [];
   const html = recipes.reduce((acc, recipe) => {
     let isMatchIngredient = false;
     recipe.ingredients.map((ingredient) => {
@@ -25,6 +29,9 @@ function recipesMainBar(recipes) {
         if (ingredient.quantity != undefined) {
           unytys = ingredient.quantity;
         }
+        // rempli le tableau pour la dropdown correspondante
+        ingredientArray.push(String([ingredient.ingredient.toLowerCase()]));
+        /////////////
         acc += `
               <li>
                   <span class="recipes-ingredient">${
@@ -38,6 +45,13 @@ function recipesMainBar(recipes) {
               `;
         return acc;
       }, "");
+      // rempli le tableau pour la dropdown correspondante
+      appareilArray.push(String([recipe.appliance.toLowerCase()]));
+      newArray = recipe.ustensils;
+      newArray.forEach((element) => {
+        ustensileArray.push(element);
+      });
+      /////////////
       acc += `
             <div class="recipes">
             <div class="recipes__img"></div>
@@ -65,6 +79,15 @@ function recipesMainBar(recipes) {
             </div>
           </div>`;
     }
+    // à chaque actualisation de la recherche main bar vide l'html dropdown correspondant
+    ulIngredient.innerHTML = "";
+    ulAppareil.innerHTML = "";
+    ulUstensiles.innerHTML = "";
+    // à chaque actualisation de la recherche main bar rempli la dropdown correspondante en fonction de la value main bar
+    arrayToHtmlLi(ingredientArray, ulIngredient);
+    arrayToHtmlLi(appareilArray, ulAppareil);
+    arrayToHtmlLi(ustensileArray, ulUstensiles);
+
     return acc;
   }, "");
   return html;

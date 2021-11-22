@@ -2,6 +2,15 @@ ulIngredient = document.querySelector(".dropdown__ingredient .block-links ul");
 ulAppareil = document.querySelector(".dropdown__appareil .block-links ul");
 ulUstensiles = document.querySelector(".dropdown__ustensiles .block-links ul");
 ////////////////////////////////////////
+// incrémente une liste en fonction du tableaux et l'element du dom donné
+function arrayToHtmlLi(array, list) {
+  arrayIngredients = [...new Set(array)];
+  for (let i = 0; i < arrayIngredients.length; i++) {
+    const item = document.createElement("li");
+    item.appendChild(document.createTextNode(arrayIngredients[i]));
+    list.appendChild(item);
+  }
+}
 function liIngredientGenerator(recipes) {
   let arrayIngredient = [];
   recipes.reduce((reducer, recipe) => {
@@ -9,24 +18,14 @@ function liIngredientGenerator(recipes) {
       arrayIngredient.push(String([ingredient.ingredient.toLowerCase()]));
     });
   });
-  arrayIngredients = [...new Set(arrayIngredient)];
-  for (let i = 0; i < arrayIngredients.length; i++) {
-    const item = document.createElement("li");
-    item.appendChild(document.createTextNode(arrayIngredients[i]));
-    ulIngredient.appendChild(item);
-  }
+  arrayToHtmlLi(arrayIngredient, ulIngredient);
 }
 function liAppareilGenerator(recipes) {
   let arrayAppareil = [];
   recipes.reduce((reducer, recipe) => {
     arrayAppareil.push(String([recipe.appliance.toLowerCase()]));
   });
-  arrayAppareils = [...new Set(arrayAppareil)];
-  for (let i = 0; i < arrayAppareils.length; i++) {
-    const item = document.createElement("li");
-    item.appendChild(document.createTextNode(arrayAppareils[i]));
-    ulAppareil.appendChild(item);
-  }
+  arrayToHtmlLi(arrayAppareil, ulAppareil);
 }
 function liUstensilesGenerator(recipes) {
   let arrayUstensile = [];
@@ -35,10 +34,12 @@ function liUstensilesGenerator(recipes) {
       arrayUstensile.push(String([ustensil.toLowerCase()]));
     });
   });
-  arrayUstensiles = [...new Set(arrayUstensile)];
-  for (let i = 0; i < arrayUstensiles.length; i++) {
-    const item = document.createElement("li");
-    item.appendChild(document.createTextNode(arrayUstensiles[i]));
-    ulUstensiles.appendChild(item);
-  }
+  arrayToHtmlLi(arrayUstensile, ulUstensiles);
 }
+
+// const btnIngredient = document.querySelector(
+//   ".dropdown__ingredient button input"
+// );
+// if (btnIngredient.value.length > 2) {
+//   console.log("coucou");
+// }
