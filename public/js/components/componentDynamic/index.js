@@ -62,19 +62,29 @@ function addComponents(item, data) {
     case itemParentClass.contains("dropdown__appareil"):
       div.classList.add("component-appareil");
       ///////////////////////////TEST////////////////////////////
-      // recipes.forEach((cardParent) => {
-      //   NameChildOfRecipes = cardParent.querySelectorAll(
-      //     ".recipes__resume__up__name"
-      //   );
-      //     console.log(item.textContent);
-      //     console.log(NameChildOfRecipes.textContent);
-      //     data.forEach((e) => {
-      //       console.log(e.name);
-      //       if(NameChildOfRecipes.textContent.toLowerCase().replace(/\s/g, "") === e.name.textContent.toLowerCase().replace(/\s/g, "")) {
-      //         cardParent.style.display = "none"
-      //       }
-      //     });
-      // });
+      recipes.forEach((cardParent) => {
+        let contentComponent = false;
+        NameChildOfRecipes = cardParent.querySelector(
+          ".recipes__resume__up__name"
+        );
+        data.forEach((e) => {
+          if (
+            NameChildOfRecipes.textContent.toLowerCase().replace(/\s/g, "") ===
+            e.name.toLowerCase().replace(/\s/g, "")
+          ) {
+            if (
+              e.appliance.toLowerCase().replace(/\s/g, "") ===
+              item.textContent.toLowerCase().replace(/\s/g, "")
+            ) {
+              contentComponent = true;
+              // cardParent.style.display = "none";
+            }
+          }
+        });
+        if (contentComponent === false) {
+          cardParent.style.display = "none";
+        }
+      });
       ////////////////////////////////TEST////////////////////////
       break;
     case itemParentClass.contains("dropdown__ustensiles"):
