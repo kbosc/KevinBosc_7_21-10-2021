@@ -6,23 +6,44 @@ function addComponents(item) {
   componentsWrapper.appendChild(div);
   let itemParentClass = item.parentNode.parentNode.parentNode.classList;
 
-  //   ajoute une class en fonction du parent de la liste ou l'on clique
+  //   ajoute une class aux components en fonction du parent de la liste ou l'on clique
   switch (true) {
     case itemParentClass.contains("dropdown__ingredient"):
       div.classList.add("component-ingredient");
+      btnIngredient.value = "";
+      //////////////TEST/////////////////
+
+      const recipes = document.querySelectorAll(".recipes");
+      // itération sur toutes les cards de recettes
+      recipes.forEach((cardParent) => {
+        let contentComponent = false;
+        childOfRecipes = cardParent.querySelectorAll(".recipes-ingredient");
+        console.log(childOfRecipes);
+        // itération sur les ingrédients de la card
+        childOfRecipes.forEach((cardChild) => {
+          // vérifier qu'au moins 1 des cardChild (ingrédient) correspond aux component cliquer
+          if (item.textContent == cardChild.innerText) {
+            contentComponent = true;
+          }
+        });
+        if (contentComponent === false) {
+          cardParent.style.display = "none";
+        }
+      });
       // const ingredientCards = document.querySelectorAll(".recipes-ingredient");
       // ingredientCards.forEach((e) => {
-      //   const componentSelected = e.innerText;
-      //   // console.log(componentSelected);
-      //   let cardParent =
+      //   //   // const componentSelected = e.innerText;
+      //   const cardParent =
       //     e.parentNode.parentNode.parentNode.parentNode.parentNode;
-      //   // console.log(e.parentNode.parentNode.parentNode.parentNode.parentNode);
-      //   if (item.textContent !== componentSelected) {
-      //     // cardParent.style.display == "none";
-      //     // cardParent.remove();
-      //     console.log(cardParent.target);
+      //   if (item.textContent !== e.innerText) {
+      //     cardParent.style.display = "none";
+      //     //     // cardParent.remove();
+      //     //     // console.log(cardParent.target);
+      //   } else {
+      //     cardParent.style.display = "block";
       //   }
       // });
+      /////////////////////////
       break;
     case itemParentClass.contains("dropdown__appareil"):
       div.classList.add("component-appareil");
@@ -47,13 +68,8 @@ function addComponents(item) {
   // item.style.display = "none";
   item.remove();
   ///////////////
-
-  // console.log(ingredientCards);
 }
 
-// function componentCompareCard(item) {
-//   console.log(item.textContent);
-// }
 ///////////////
 function removeComponents(item) {
   let initElem = item.target;
@@ -85,5 +101,8 @@ function removeComponents(item) {
     }
     //   suppression du component
     item.target.parentNode.remove();
+    itemUl.addEventListener("click", function () {
+      addComponents(itemUl);
+    });
   }
 }

@@ -1,4 +1,5 @@
 ulIngredient = document.querySelector(".dropdown__ingredient .block-links ul");
+
 ulAppareil = document.querySelector(".dropdown__appareil .block-links ul");
 ulUstensiles = document.querySelector(".dropdown__ustensiles .block-links ul");
 ////////////////////////////////////////
@@ -36,10 +37,4 @@ function liUstensilesGenerator(recipes) {
   });
   arrayToHtmlLi(arrayUstensile, ulUstensiles);
 }
-
-// const btnIngredient = document.querySelector(
-//   ".dropdown__ingredient button input"
-// );
-// if (btnIngredient.value.length > 2) {
-//   console.log("coucou");
-// }
+//////////////////////TEST/////////////
