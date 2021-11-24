@@ -9,10 +9,11 @@ const btnAppareil = document.querySelector(".dropdown__appareil button input");
 const btnUstensiles = document.querySelector(
   ".dropdown__ustensiles button input"
 );
+const componentsWrapper = document.querySelector(".components-wrapper");
 
 document.addEventListener(onFetchData.name, (e) => {
   const { data } = e;
-  console.log(data);
+  // console.log(data);
   recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
   valueMainBar.addEventListener("keyup", () => {
     if (valueMainBar.value.length > 2) {
@@ -26,31 +27,34 @@ document.addEventListener(onFetchData.name, (e) => {
   liIngredientGenerator(data.recipes);
   liUstensilesGenerator(data.recipes);
   liAppareilGenerator(data.recipes);
+  ///////////////////////////////TEST///////////////////////////////////
   // add le li dropdown cliquer à la barre des components et supprimer le li de la dropdown
-  const liIngredient = document.querySelectorAll(
-    ".dropdown__ingredient .block-links ul li"
-  );
-  liIngredient.forEach(function (item) {
-    item.addEventListener("click", function () {
-      addComponents(item);
-    });
-  });
-  const liAppareil = document.querySelectorAll(
-    ".dropdown__appareil .block-links ul li"
-  );
-  liAppareil.forEach(function (item) {
-    item.addEventListener("click", function () {
-      addComponents(item);
-    });
-  });
-  const liUstensiles = document.querySelectorAll(
-    ".dropdown__ustensiles .block-links ul li"
-  );
-  liUstensiles.forEach(function (item) {
-    item.addEventListener("click", function () {
-      addComponents(item);
-    });
-  });
+  addComponentsAndFilterDropDown(data.recipes);
+  // const liIngredient = document.querySelectorAll(
+  //   ".dropdown__ingredient .block-links ul li"
+  // );
+  // liIngredient.forEach(function (item) {
+  //   item.addEventListener("click", function () {
+  //     addComponents(item);
+  //   });
+  // });
+  // const liAppareil = document.querySelectorAll(
+  //   ".dropdown__appareil .block-links ul li"
+  // );
+  // liAppareil.forEach(function (item) {
+  //   item.addEventListener("click", function () {
+  //     addComponents(item);
+  //   });
+  // });
+  // const liUstensiles = document.querySelectorAll(
+  //   ".dropdown__ustensiles .block-links ul li"
+  // );
+  // liUstensiles.forEach(function (item) {
+  //   item.addEventListener("click", function () {
+  //     addComponents(item);
+  //   });
+  // });
+  ///////////////////////////////TEST///////////////////////////////////
   // remove components et les ajoutes aux li dropdown correspondant
   componentsWrapper.addEventListener("click", function (item) {
     removeComponents(item);

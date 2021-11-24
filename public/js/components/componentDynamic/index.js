@@ -1,28 +1,56 @@
-const componentsWrapper = document.querySelector(".components-wrapper");
-function addComponents(item) {
+function addComponentsAndFilterDropDown(recipes) {
+  data = recipes;
+  console.log(data);
+  const liIngredient = document.querySelectorAll(
+    ".dropdown__ingredient .block-links ul li"
+  );
+  liIngredient.forEach(function (item) {
+    item.addEventListener("click", function () {
+      addComponents(item);
+    });
+  });
+  const liAppareil = document.querySelectorAll(
+    ".dropdown__appareil .block-links ul li"
+  );
+  liAppareil.forEach(function (item) {
+    // console.log(data);
+    item.addEventListener("click", function () {
+      addComponents(item, data);
+    });
+  });
+  const liUstensiles = document.querySelectorAll(
+    ".dropdown__ustensiles .block-links ul li"
+  );
+  liUstensiles.forEach(function (item) {
+    item.addEventListener("click", function () {
+      addComponents(item);
+    });
+  });
+}
+function addComponents(item, data) {
   // creation d'une div et défini ou injecter les components
   const div = document.createElement("div");
   div.classList.add("component");
   componentsWrapper.appendChild(div);
   let itemParentClass = item.parentNode.parentNode.parentNode.classList;
+  const recipes = document.querySelectorAll(".recipes");
 
   //   ajoute une class aux components en fonction du parent de la liste ou l'on clique
   switch (true) {
     case itemParentClass.contains("dropdown__ingredient"):
       div.classList.add("component-ingredient");
       btnIngredient.value = "";
-      //////////////TEST/////////////////
-
-      const recipes = document.querySelectorAll(".recipes");
-      // itération sur toutes les cards de recettes
+      // ***Filter**** Itération sur toutes les cards de recettes pour filtrer
       recipes.forEach((cardParent) => {
         let contentComponent = false;
         childOfRecipes = cardParent.querySelectorAll(".recipes-ingredient");
-        console.log(childOfRecipes);
         // itération sur les ingrédients de la card
         childOfRecipes.forEach((cardChild) => {
           // vérifier qu'au moins 1 des cardChild (ingrédient) correspond aux component cliquer
-          if (item.textContent == cardChild.innerText) {
+          if (
+            item.textContent.toLowerCase().replace(/\s/g, "") ===
+            cardChild.innerText.toLowerCase().replace(/\s/g, "")
+          ) {
             contentComponent = true;
           }
         });
@@ -30,23 +58,24 @@ function addComponents(item) {
           cardParent.style.display = "none";
         }
       });
-      // const ingredientCards = document.querySelectorAll(".recipes-ingredient");
-      // ingredientCards.forEach((e) => {
-      //   //   // const componentSelected = e.innerText;
-      //   const cardParent =
-      //     e.parentNode.parentNode.parentNode.parentNode.parentNode;
-      //   if (item.textContent !== e.innerText) {
-      //     cardParent.style.display = "none";
-      //     //     // cardParent.remove();
-      //     //     // console.log(cardParent.target);
-      //   } else {
-      //     cardParent.style.display = "block";
-      //   }
-      // });
-      /////////////////////////
       break;
     case itemParentClass.contains("dropdown__appareil"):
       div.classList.add("component-appareil");
+      ///////////////////////////TEST////////////////////////////
+      // recipes.forEach((cardParent) => {
+      //   NameChildOfRecipes = cardParent.querySelectorAll(
+      //     ".recipes__resume__up__name"
+      //   );
+      //     console.log(item.textContent);
+      //     console.log(NameChildOfRecipes.textContent);
+      //     data.forEach((e) => {
+      //       console.log(e.name);
+      //       if(NameChildOfRecipes.textContent.toLowerCase().replace(/\s/g, "") === e.name.textContent.toLowerCase().replace(/\s/g, "")) {
+      //         cardParent.style.display = "none"
+      //       }
+      //     });
+      // });
+      ////////////////////////////////TEST////////////////////////
       break;
     case itemParentClass.contains("dropdown__ustensiles"):
       div.classList.add("component-ustensiles");
@@ -67,8 +96,29 @@ function addComponents(item) {
   // supprime l'élément cliquer de la dropdown
   // item.style.display = "none";
   item.remove();
-  ///////////////
 }
+// function FilterInDropDown(recipesChild) {
+//   const recipes = document.querySelectorAll(".recipes");
+//   // itération sur toutes les cards de recettes
+//   recipes.forEach((cardParent) => {
+//     let contentComponent = false;
+//     childOfRecipes = cardParent.querySelectorAll(`.${recipesChild}`);
+//     // console.log(childOfRecipes);
+//     // itération sur les ingrédients de la card
+//     childOfRecipes.forEach((cardChild) => {
+//       // vérifier qu'au moins 1 des cardChild (ingrédient) correspond aux component cliquer
+//       if (
+//         item.textContent.toLowerCase().replace(/\s/g, "") ===
+//         cardChild.innerText.toLowerCase().replace(/\s/g, "")
+//       ) {
+//         contentComponent = true;
+//       }
+//     });
+//     if (contentComponent === false) {
+//       cardParent.style.display = "none";
+//     }
+//   });
+// }
 
 ///////////////
 function removeComponents(item) {
