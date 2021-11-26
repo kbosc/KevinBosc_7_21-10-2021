@@ -18,10 +18,10 @@ document.addEventListener(onFetchData.name, (e) => {
   valueMainBar.addEventListener("keyup", () => {
     if (valueMainBar.value.length > 2) {
       recipesWrapper.innerHTML = recipesMainBar(data.recipes);
-      // dynamicUlDropdown();
     }
     if (valueMainBar.value.length <= 2) {
       recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
+      componentsWrapper.innerHTML = "";
     }
   });
   liIngredientGenerator(data.recipes);
@@ -30,39 +30,10 @@ document.addEventListener(onFetchData.name, (e) => {
   ///////////////////////////////TEST///////////////////////////////////
   // add le li dropdown cliquer à la barre des components et supprimer le li de la dropdown
   addComponentsAndFilterDropDown(data.recipes);
-  // const liIngredient = document.querySelectorAll(
-  //   ".dropdown__ingredient .block-links ul li"
-  // );
-  // liIngredient.forEach(function (item) {
-  //   item.addEventListener("click", function () {
-  //     addComponents(item);
-  //   });
-  // });
-  // const liAppareil = document.querySelectorAll(
-  //   ".dropdown__appareil .block-links ul li"
-  // );
-  // liAppareil.forEach(function (item) {
-  //   item.addEventListener("click", function () {
-  //     addComponents(item);
-  //   });
-  // });
-  // const liUstensiles = document.querySelectorAll(
-  //   ".dropdown__ustensiles .block-links ul li"
-  // );
-  // liUstensiles.forEach(function (item) {
-  //   item.addEventListener("click", function () {
-  //     addComponents(item);
-  //   });
-  // });
-  ///////////////////////////////TEST///////////////////////////////////
   // remove components et les ajoutes aux li dropdown correspondant
   componentsWrapper.addEventListener("click", function (item) {
-    removeComponents(item);
+    removeComponents(item, data);
   });
-  // if ((valueMainBar.value.length = 0)) {
-  //   liIngredientGenerator(data.recipes);
-  //   liUstensilesGenerator(data.recipes);
-  //   liAppareilGenerator(data.recipes);
-  // }
+  ///////////////////////////////TEST///////////////////////////////////
   //////////////////////////////////////////////
 });

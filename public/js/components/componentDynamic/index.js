@@ -1,6 +1,5 @@
 function addComponentsAndFilterDropDown(recipes) {
   data = recipes;
-  console.log(data);
   const liIngredient = document.querySelectorAll(
     ".dropdown__ingredient .block-links ul li"
   );
@@ -23,7 +22,7 @@ function addComponentsAndFilterDropDown(recipes) {
   );
   liUstensiles.forEach(function (item) {
     item.addEventListener("click", function () {
-      addComponents(item);
+      addComponents(item, data);
     });
   });
 }
@@ -61,7 +60,6 @@ function addComponents(item, data) {
       break;
     case itemParentClass.contains("dropdown__appareil"):
       div.classList.add("component-appareil");
-      ///////////////////////////TEST////////////////////////////
       recipes.forEach((cardParent) => {
         let contentComponent = false;
         NameChildOfRecipes = cardParent.querySelector(
@@ -85,10 +83,36 @@ function addComponents(item, data) {
           cardParent.style.display = "none";
         }
       });
-      ////////////////////////////////TEST////////////////////////
       break;
     case itemParentClass.contains("dropdown__ustensiles"):
       div.classList.add("component-ustensiles");
+      ////////////////////////////////TEST////////////////////////
+      recipes.forEach((cardParent) => {
+        let contentComponent = false;
+        NameChildOfRecipes = cardParent.querySelector(
+          ".recipes__resume__up__name"
+        );
+        data.forEach((e) => {
+          if (
+            NameChildOfRecipes.textContent.toLowerCase().replace(/\s/g, "") ===
+            e.name.toLowerCase().replace(/\s/g, "")
+          ) {
+            dataUstensils = e.ustensils;
+            dataUstensils.forEach((e) => {
+              if (
+                e.toLowerCase().replace(/\s/g, "") ===
+                item.textContent.toLowerCase().replace(/\s/g, "")
+              ) {
+                contentComponent = true;
+              }
+            });
+          }
+        });
+        if (contentComponent === false) {
+          cardParent.style.display = "none";
+        }
+      });
+      ///////////////////////////TEST////////////////////////////
       break;
     default:
       console.log("li inconnu");
@@ -131,38 +155,41 @@ function addComponents(item, data) {
 // }
 
 ///////////////
-function removeComponents(item) {
+function removeComponents(item, data) {
   let initElem = item.target;
   //   suppression du component et creation d'un li dans le dropdown
   //   correspondant en fonction de la class de la target
   let elemParentClass = initElem.parentNode.classList;
   if (initElem.className == "cross-item") {
-    const itemUl = document.createElement("li");
+    const itemIL = document.createElement("li");
     //  récupération du text component
-    itemUl.appendChild(
+    itemIL.appendChild(
       document.createTextNode(item.target.previousElementSibling.textContent)
     );
     // création du li dans sa dropdown en fonction de la class du parent target
     switch (true) {
       case elemParentClass.contains("component-ingredient"):
+        whenRemoveComponent(item, data);
         // console.log("ingredient");
-        ulIngredient.appendChild(itemUl);
+        ulIngredient.appendChild(itemIL);
         break;
       case elemParentClass.contains("component-appareil"):
+        whenRemoveComponent(item);
         // console.log("appareil");
-        ulAppareil.appendChild(itemUl);
+        ulAppareil.appendChild(itemIL);
         break;
       case elemParentClass.contains("component-ustensiles"):
+        whenRemoveComponent(item);
         // console.log("ustensiles");
-        ulUstensiles.appendChild(itemUl);
+        ulUstensiles.appendChild(itemIL);
         break;
       default:
         console.log("component inconnu");
     }
     //   suppression du component
     item.target.parentNode.remove();
-    itemUl.addEventListener("click", function () {
-      addComponents(itemUl);
+    itemIL.addEventListener("click", function () {
+      addComponents(itemIL);
     });
   }
 }
