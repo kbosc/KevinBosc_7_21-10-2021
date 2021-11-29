@@ -22,6 +22,9 @@ document.addEventListener(onFetchData.name, (e) => {
     if (valueMainBar.value.length <= 2) {
       recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
       componentsWrapper.innerHTML = "";
+      liIngredientGenerator(data.recipes);
+      liUstensilesGenerator(data.recipes);
+      liAppareilGenerator(data.recipes);
     }
   });
   liIngredientGenerator(data.recipes);

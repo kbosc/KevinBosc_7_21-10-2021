@@ -65,6 +65,7 @@ function addComponents(item, data) {
         NameChildOfRecipes = cardParent.querySelector(
           ".recipes__resume__up__name"
         );
+        console.log(data);
         data.forEach((e) => {
           if (
             NameChildOfRecipes.textContent.toLowerCase().replace(/\s/g, "") ===
@@ -161,35 +162,40 @@ function removeComponents(item, data) {
   //   correspondant en fonction de la class de la target
   let elemParentClass = initElem.parentNode.classList;
   if (initElem.className == "cross-item") {
-    const itemIL = document.createElement("li");
+    const itemLI = document.createElement("li");
     //  récupération du text component
-    itemIL.appendChild(
+    itemLI.appendChild(
       document.createTextNode(item.target.previousElementSibling.textContent)
     );
     // création du li dans sa dropdown en fonction de la class du parent target
     switch (true) {
       case elemParentClass.contains("component-ingredient"):
-        whenRemoveComponent(item, data);
+        whenRemoveComponent(item);
         // console.log("ingredient");
-        ulIngredient.appendChild(itemIL);
+        ulIngredient.appendChild(itemLI);
         break;
       case elemParentClass.contains("component-appareil"):
-        whenRemoveComponent(item);
+        whenRemoveComponent(item, data);
         // console.log("appareil");
-        ulAppareil.appendChild(itemIL);
+        ulAppareil.appendChild(itemLI);
         break;
       case elemParentClass.contains("component-ustensiles"):
-        whenRemoveComponent(item);
+        whenRemoveComponent(item, data);
         // console.log("ustensiles");
-        ulUstensiles.appendChild(itemIL);
+        ulUstensiles.appendChild(itemLI);
         break;
       default:
         console.log("component inconnu");
     }
     //   suppression du component
     item.target.parentNode.remove();
-    itemIL.addEventListener("click", function () {
-      addComponents(itemIL);
+    itemLI.addEventListener("click", function () {
+      addComponents(itemLI, data);
     });
+    if (componentsWrapper.childNodes.length === 0) {
+      // La fonction semble ne pas s'appeler
+      console.log("Si list component vide");
+      recipesCardsFactory(data.recipes);
+    }
   }
 }
