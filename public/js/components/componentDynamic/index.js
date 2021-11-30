@@ -168,8 +168,6 @@ function removeComponents(item, data) {
     });
     if (componentsWrapper.childNodes.length === 0) {
       recipesWrapper.innerHTML = recipesMainBar(data.recipes);
-    } else {
-      resetLiDropDown(data.recipes);
     }
   }
 }

@@ -25,6 +25,7 @@ document.addEventListener(onFetchData.name, (e) => {
       liIngredientGenerator(data.recipes);
       liUstensilesGenerator(data.recipes);
       liAppareilGenerator(data.recipes);
+      ecouteLiDropdown(data.recipes);
     }
   });
   liIngredientGenerator(data.recipes);
