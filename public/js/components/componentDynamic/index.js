@@ -1,4 +1,4 @@
-function addComponentsAndFilterDropDown(recipes) {
+function ecouteLiDropdown(recipes) {
   data = recipes;
   const liIngredient = document.querySelectorAll(
     ".dropdown__ingredient .block-links ul li"
@@ -125,9 +125,8 @@ function addComponents(item, data) {
   />
   `;
   // supprime l'élément cliquer de la dropdown
-  item.remove();
-  resetLiDropDown(recipes, data);
-  console.log("filtre dropdown ici");
+  // item.remove();
+  resetLiDropDown(data, item);
 }
 
 ///////////////
@@ -169,6 +168,8 @@ function removeComponents(item, data) {
     });
     if (componentsWrapper.childNodes.length === 0) {
       recipesWrapper.innerHTML = recipesMainBar(data.recipes);
+    } else {
+      resetLiDropDown(data.recipes);
     }
   }
 }

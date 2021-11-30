@@ -1,5 +1,4 @@
-function recipesCardsFactory(recipe) {
-  recipes = recipe.recipes;
+function recipesCardsFactory(recipes) {
   const html = recipes.reduce((acc, recipe) => {
     const ingredients = recipe.ingredients.reduce((acc, ingredient) => {
       let unytys = "";

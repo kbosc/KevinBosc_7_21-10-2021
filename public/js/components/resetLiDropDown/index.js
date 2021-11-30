@@ -1,4 +1,5 @@
-function resetLiDropDown(recipes, data) {
+function resetLiDropDown(data, item) {
+  const recipes = document.querySelectorAll(".recipes");
   let ingredientArray = [];
   let appareilArray = [];
   let ustensileArray = [];
@@ -32,34 +33,23 @@ function resetLiDropDown(recipes, data) {
   ulIngredient.innerHTML = "";
   ulAppareil.innerHTML = "";
   ulUstensiles.innerHTML = "";
-  // à chaque actualisation de la recherche main bar rempli la dropdown correspondante en fonction de la value main bar
+  //   à chaque actualisation de la recherche main bar rempli la dropdown
+  //   correspondante en fonction de la value main bar
   arrayToHtmlLi(ingredientArray, ulIngredient);
   arrayToHtmlLi(appareilArray, ulAppareil);
   arrayToHtmlLi(ustensileArray, ulUstensiles);
-  // relance une écoute sur les li dropdown pour filtrer
-  const liIngredient = document.querySelectorAll(
-    ".dropdown__ingredient .block-links ul li"
-  );
-  liIngredient.forEach(function (item) {
-    item.addEventListener("click", function () {
-      addComponents(item);
+  const listLi = document.querySelectorAll(".block-links ul li");
+  const listComponent = document.querySelectorAll(".component");
+  listLi.forEach((li) => {
+    listComponent.forEach((component) => {
+      const componentText = component.childNodes[1].textContent;
+      if (
+        li.textContent.toLowerCase().replace(/\s/g, "") ===
+        componentText.toLowerCase().replace(/\s/g, "")
+      ) {
+        li.remove();
+      }
     });
   });
-  const liAppareil = document.querySelectorAll(
-    ".dropdown__appareil .block-links ul li"
-  );
-  liAppareil.forEach(function (item) {
-    // console.log(data);
-    item.addEventListener("click", function () {
-      addComponents(item, data);
-    });
-  });
-  const liUstensiles = document.querySelectorAll(
-    ".dropdown__ustensiles .block-links ul li"
-  );
-  liUstensiles.forEach(function (item) {
-    item.addEventListener("click", function () {
-      addComponents(item, data);
-    });
-  });
+  ecouteLiDropdown(data);
 }

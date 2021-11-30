@@ -51,6 +51,7 @@ function recipesMainBar(recipes) {
       newArray.forEach((element) => {
         ustensileArray.push(element);
       });
+
       acc += `
             <div class="recipes">
             <div class="recipes__img"></div>
@@ -89,33 +90,6 @@ function recipesMainBar(recipes) {
 
     return acc;
   }, "");
-  ////////////REFACTO///////////////
-  // relance une écoute sur les li dropdown pour filtrer
-  const liIngredient = document.querySelectorAll(
-    ".dropdown__ingredient .block-links ul li"
-  );
-  liIngredient.forEach(function (item) {
-    item.addEventListener("click", function () {
-      addComponents(item);
-    });
-  });
-  const liAppareil = document.querySelectorAll(
-    ".dropdown__appareil .block-links ul li"
-  );
-  liAppareil.forEach(function (item) {
-    // console.log(data);
-    item.addEventListener("click", function () {
-      addComponents(item, data);
-    });
-  });
-  const liUstensiles = document.querySelectorAll(
-    ".dropdown__ustensiles .block-links ul li"
-  );
-  liUstensiles.forEach(function (item) {
-    item.addEventListener("click", function () {
-      addComponents(item, data);
-    });
-  });
-  ////////////REFACTO///////////////
+  ecouteLiDropdown(data);
   return html;
 }
