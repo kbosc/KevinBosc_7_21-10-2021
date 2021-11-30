@@ -14,7 +14,7 @@ const componentsWrapper = document.querySelector(".components-wrapper");
 document.addEventListener(onFetchData.name, (e) => {
   const { data } = e;
   // console.log(data);
-  recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
+  recipesWrapper.innerHTML = recipesCardsFactory(data);
   valueMainBar.addEventListener("keyup", () => {
     if (valueMainBar.value.length > 2) {
       recipesWrapper.innerHTML = recipesMainBar(data.recipes);

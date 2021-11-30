@@ -2,7 +2,6 @@ ulIngredient = document.querySelector(".dropdown__ingredient .block-links ul");
 
 ulAppareil = document.querySelector(".dropdown__appareil .block-links ul");
 ulUstensiles = document.querySelector(".dropdown__ustensiles .block-links ul");
-////////////////////////////////////////
 // incrémente une liste en fonction du tableaux et l'element du dom donné
 function arrayToHtmlLi(array, list) {
   arrayIngredients = [...new Set(array)];
@@ -37,4 +36,3 @@ function liUstensilesGenerator(recipes) {
   });
   arrayToHtmlLi(arrayUstensile, ulUstensiles);
 }
-//////////////////////TEST/////////////

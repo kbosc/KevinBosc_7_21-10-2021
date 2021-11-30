@@ -51,7 +51,6 @@ function recipesMainBar(recipes) {
       newArray.forEach((element) => {
         ustensileArray.push(element);
       });
-      /////////////
       acc += `
             <div class="recipes">
             <div class="recipes__img"></div>

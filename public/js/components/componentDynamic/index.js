@@ -5,7 +5,7 @@ function addComponentsAndFilterDropDown(recipes) {
   );
   liIngredient.forEach(function (item) {
     item.addEventListener("click", function () {
-      addComponents(item);
+      addComponents(item, data);
     });
   });
   const liAppareil = document.querySelectorAll(
@@ -65,7 +65,6 @@ function addComponents(item, data) {
         NameChildOfRecipes = cardParent.querySelector(
           ".recipes__resume__up__name"
         );
-        console.log(data);
         data.forEach((e) => {
           if (
             NameChildOfRecipes.textContent.toLowerCase().replace(/\s/g, "") ===
@@ -76,7 +75,6 @@ function addComponents(item, data) {
               item.textContent.toLowerCase().replace(/\s/g, "")
             ) {
               contentComponent = true;
-              // cardParent.style.display = "none";
             }
           }
         });
@@ -87,7 +85,6 @@ function addComponents(item, data) {
       break;
     case itemParentClass.contains("dropdown__ustensiles"):
       div.classList.add("component-ustensiles");
-      ////////////////////////////////TEST////////////////////////
       recipes.forEach((cardParent) => {
         let contentComponent = false;
         NameChildOfRecipes = cardParent.querySelector(
@@ -113,7 +110,6 @@ function addComponents(item, data) {
           cardParent.style.display = "none";
         }
       });
-      ///////////////////////////TEST////////////////////////////
       break;
     default:
       console.log("li inconnu");
@@ -129,31 +125,10 @@ function addComponents(item, data) {
   />
   `;
   // supprime l'élément cliquer de la dropdown
-  // item.style.display = "none";
   item.remove();
+  resetLiDropDown(recipes, data);
+  console.log("filtre dropdown ici");
 }
-// function FilterInDropDown(recipesChild) {
-//   const recipes = document.querySelectorAll(".recipes");
-//   // itération sur toutes les cards de recettes
-//   recipes.forEach((cardParent) => {
-//     let contentComponent = false;
-//     childOfRecipes = cardParent.querySelectorAll(`.${recipesChild}`);
-//     // console.log(childOfRecipes);
-//     // itération sur les ingrédients de la card
-//     childOfRecipes.forEach((cardChild) => {
-//       // vérifier qu'au moins 1 des cardChild (ingrédient) correspond aux component cliquer
-//       if (
-//         item.textContent.toLowerCase().replace(/\s/g, "") ===
-//         cardChild.innerText.toLowerCase().replace(/\s/g, "")
-//       ) {
-//         contentComponent = true;
-//       }
-//     });
-//     if (contentComponent === false) {
-//       cardParent.style.display = "none";
-//     }
-//   });
-// }
 
 ///////////////
 function removeComponents(item, data) {
@@ -168,19 +143,20 @@ function removeComponents(item, data) {
       document.createTextNode(item.target.previousElementSibling.textContent)
     );
     // création du li dans sa dropdown en fonction de la class du parent target
+    item.target.parentNode.remove();
     switch (true) {
       case elemParentClass.contains("component-ingredient"):
-        whenRemoveComponent(item);
+        whenRemoveComponent(data);
         // console.log("ingredient");
         ulIngredient.appendChild(itemLI);
         break;
       case elemParentClass.contains("component-appareil"):
-        whenRemoveComponent(item, data);
+        whenRemoveComponent(data);
         // console.log("appareil");
         ulAppareil.appendChild(itemLI);
         break;
       case elemParentClass.contains("component-ustensiles"):
-        whenRemoveComponent(item, data);
+        whenRemoveComponent(data);
         // console.log("ustensiles");
         ulUstensiles.appendChild(itemLI);
         break;
@@ -188,14 +164,11 @@ function removeComponents(item, data) {
         console.log("component inconnu");
     }
     //   suppression du component
-    item.target.parentNode.remove();
     itemLI.addEventListener("click", function () {
-      addComponents(itemLI, data);
+      addComponents(itemLI, data.recipes);
     });
     if (componentsWrapper.childNodes.length === 0) {
-      // La fonction semble ne pas s'appeler
-      console.log("Si list component vide");
-      recipesCardsFactory(data.recipes);
+      recipesWrapper.innerHTML = recipesMainBar(data.recipes);
     }
   }
 }
