@@ -10,7 +10,7 @@
   overflow: hidden;
   & .dpd {
     @include responsive-medium() {
-      width: max-content;
+      width: 100%;
     }
     width: 20%;
     transition: width 0.3s ease-in-out;
@@ -45,17 +45,21 @@
       }
     }
     & .block-links {
+      height: 0;
+      transition: height 0.3s ease-in-out;
       position: absolute;
       z-index: 10;
       // max-height: 30%;
       transition: height 0.3s ease-in-out;
       // display: none;
-      height: 0;
       border-radius: 0px 0 8px 8px;
       display: block;
       width: inherit;
       // width: 34%;
       margin: -0.2rem 0;
+      @include responsive-medium() {
+        width: 25.5rem;
+      }
       & ul {
         z-index: 10;
         gap: 0.5rem;
@@ -79,10 +83,10 @@
     }
   }
   & .dropdown-open {
-    width: 45%;
+    width: 32.8rem;
     @include responsive-medium() {
-      // width: 100%;
-      width: max-content;
+      width: 100%;
+      // width: 32.8rem;
     }
   }
   &__ingredient > * {

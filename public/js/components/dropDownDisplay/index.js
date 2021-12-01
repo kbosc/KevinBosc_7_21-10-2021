@@ -26,7 +26,7 @@ function toggleDropDown() {
     // this.nextElementSibling.style.margin = "-0.2rem 0";
     // this.nextElementSibling.style.display = "block";
     // this.parentNode.style.width = "40%";
-    this.nextElementSibling.style.height = "30%";
+    this.nextElementSibling.style.height = "auto";
     // this.nextElementSibling.style.height = `${this.nextElementSibling.scrollHeight}px`;
     icon.classList.toggle("rotate");
 
