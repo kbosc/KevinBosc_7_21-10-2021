@@ -49,9 +49,6 @@
       transition: height 0.3s ease-in-out;
       position: absolute;
       z-index: 10;
-      // max-height: 30%;
-      transition: height 0.3s ease-in-out;
-      // display: none;
       border-radius: 0px 0 8px 8px;
       display: block;
       width: inherit;
@@ -65,12 +62,14 @@
         gap: 0.5rem;
         padding-left: 1rem;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         // align-content: flex-start;
         height: 100%;
         overflow: hidden;
+        margin-bottom: 1rem;
         & li {
+          width: 30%;
           list-style-type: none;
           // padding: 0.2rem 2rem 0.2rem 0;
           cursor: pointer;
