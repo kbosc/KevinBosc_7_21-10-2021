@@ -4,7 +4,7 @@ main {
   flex-wrap: wrap;
   flex-direction: row;
   // justify-content: space-between;
-  gap: 1rem;
+  gap: 3rem;
   align-content: flex-start;
   @include responsive-medium() {
     // flex-direction: column;
