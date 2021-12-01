@@ -3,11 +3,11 @@ const valueMainBar = document.querySelector("nav input");
 const dropDownAppareil = document.querySelector("#selections-appareil");
 const dropDownUstensiles = document.querySelector("#selections-ustensiles");
 const btnIngredient = document.querySelector(
-  ".dropdown__ingredient button input"
+  ".dropdown__ingredient .button input"
 );
-const btnAppareil = document.querySelector(".dropdown__appareil button input");
+const btnAppareil = document.querySelector(".dropdown__appareil .button input");
 const btnUstensiles = document.querySelector(
-  ".dropdown__ustensiles button input"
+  ".dropdown__ustensiles .button input"
 );
 const componentsWrapper = document.querySelector(".components-wrapper");
 

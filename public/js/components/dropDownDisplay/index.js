@@ -1,14 +1,14 @@
-const btnDropdown = document.querySelectorAll(".dpd button");
+const btnDropdown = document.querySelectorAll(".dpd .button");
 btnDropdown.forEach((btn) => btn.addEventListener("click", toggleDropDown));
 
 function toggleDropDown() {
   const icon = this.querySelector("img");
-  if (this.className == "active") {
+  if (this.classList.contains("active")) {
     btnDropdown.forEach((btn) => {
       btn.classList.add("active");
       this.nextElementSibling.classList.remove("active");
 
-      if (btn.className == "active") {
+      if (btn.classList.contains("active")) {
         btn.nextElementSibling.style.height = 0;
         // btn.nextElementSibling.style.margin = "- 0.1rem";
         this.parentNode.classList.remove("dropdown-open");
