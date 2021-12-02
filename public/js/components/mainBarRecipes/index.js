@@ -5,6 +5,7 @@ function recipesMainBar(recipes) {
   let newArray = [];
   const html = recipes.reduce((acc, recipe) => {
     let isMatchIngredient = false;
+    // parcour tous les ingrédient et vérifier si il match, si oui passé à true isMatchIngredient
     recipe.ingredients.map((ingredient) => {
       if (
         ingredient.ingredient
@@ -14,7 +15,8 @@ function recipesMainBar(recipes) {
         isMatchIngredient = true;
       }
     });
-    // parcour tous les ingrédient et vérifier si il match, si oui passé à true isMatchIngredient
+    // Si le nom de la recette match avec la value de l'input
+    // OU isMatchIngredient est true OU la description match l'input
     if (
       recipe.name
         .toLowerCase()
