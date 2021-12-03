@@ -3,7 +3,11 @@ function dropDownFilter(btn, list) {
   //   la valeur de l'input, affiche ceux qui correspondent et cache les autres
   if (btn.value.length > 2) {
     list.forEach((element) => {
-      if (element.textContent.match(".*" + btn.value.toLowerCase() + ".*")) {
+      if (
+        element.textContent
+          .toLowerCase()
+          .match(".*" + btn.value.toLowerCase() + ".*")
+      ) {
         element.style.display = "block";
       } else {
         element.style.display = "none";

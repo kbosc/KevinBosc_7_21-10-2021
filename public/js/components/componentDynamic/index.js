@@ -25,6 +25,24 @@ function ecouteLiDropdown(recipes) {
       addComponents(item, data);
     });
   });
+  btnIngredient.addEventListener("keyup", () => {
+    liIngredientFilter = document.querySelectorAll(
+      ".dropdown__ingredient .block-links ul li"
+    );
+    dropDownFilter(btnIngredient, liIngredientFilter);
+  });
+  btnAppareil.addEventListener("keyup", () => {
+    liAppareilFilter = document.querySelectorAll(
+      ".dropdown__appareil .block-links ul li"
+    );
+    dropDownFilter(btnAppareil, liAppareilFilter);
+  });
+  btnUstensiles.addEventListener("keyup", () => {
+    liUstensilesFilter = document.querySelectorAll(
+      ".dropdown__ustensiles .block-links ul li"
+    );
+    dropDownFilter(btnUstensiles, liUstensilesFilter);
+  });
 }
 function addComponents(item, data) {
   // creation d'une div et défini ou injecter les components
@@ -127,6 +145,7 @@ function addComponents(item, data) {
   // supprime l'élément cliquer de la dropdown
   // item.remove();
   resetLiDropDown(data, item);
+  ecouteLiDropdown(data);
 }
 
 ///////////////
