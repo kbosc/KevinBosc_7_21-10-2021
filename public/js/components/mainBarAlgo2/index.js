@@ -1,6 +1,10 @@
 // let valueMainSearch = valueMainBar.value;
 function MainBarSearchAlgo2(data) {
   const datas = data.recipes;
+  let ingredientArray = [];
+  let appareilArray = [];
+  let ustensileArray = [];
+  let newArray = [];
   let recettes = [];
 
   recettes = datas.filter(function (e) {
@@ -20,10 +24,8 @@ function MainBarSearchAlgo2(data) {
   });
   const html = recettes.reduce((acc, element) => {
     const listInngredients = element.ingredients.reduce((acc, ingredients) => {
-      //   let unytys = "";
-      //   if (ingredients.quantity != undefined) {
-      //     unytys = ingredients.quantity;
-      //   }
+      // rempli le tableau pour la dropdown correspondante
+      ingredientArray.push(String([ingredients.ingredient.toLowerCase()]));
       acc += `
               <li>
                   <span class="recipes-ingredient">${
@@ -39,6 +41,12 @@ function MainBarSearchAlgo2(data) {
               `;
       return acc;
     }, "");
+    // rempli le tableau pour la dropdown correspondante
+    appareilArray.push(String([element.appliance.toLowerCase()]));
+    newArray = element.ustensils;
+    newArray.forEach((ustensil) => {
+      ustensileArray.push(ustensil);
+    });
     acc += `
          <div class="recipes">
          <div class="recipes__img"></div>
@@ -65,7 +73,16 @@ function MainBarSearchAlgo2(data) {
            </div>
          </div>
        </div>`;
+    // à chaque actualisation de la recherche main bar vide l'html dropdown correspondant
+    ulIngredient.innerHTML = "";
+    ulAppareil.innerHTML = "";
+    ulUstensiles.innerHTML = "";
+    // à chaque actualisation de la recherche main bar rempli la dropdown correspondante en fonction de la value main bar
+    arrayToHtmlLi(ingredientArray, ulIngredient);
+    arrayToHtmlLi(appareilArray, ulAppareil);
+    arrayToHtmlLi(ustensileArray, ulUstensiles);
     return acc;
   }, "");
+  ecouteLiDropdown(data);
   return (recipesWrapper.innerHTML = html);
 }
