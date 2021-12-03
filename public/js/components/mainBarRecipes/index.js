@@ -5,7 +5,8 @@ function recipesMainBar(recipes) {
   let newArray = [];
   const html = recipes.reduce((acc, recipe) => {
     let isMatchIngredient = false;
-    // parcour tous les ingrédient et vérifier si il match, si oui passé à true isMatchIngredient
+    // parcour tous les ingrédient et vérifier si il match avec
+    // l'input value, si oui passé à true isMatchIngredient
     recipe.ingredients.map((ingredient) => {
       if (
         ingredient.ingredient
@@ -27,10 +28,6 @@ function recipesMainBar(recipes) {
         .match(".*" + valueMainBar.value.toLowerCase() + ".*")
     ) {
       const ingredients = recipe.ingredients.reduce((acc, ingredient) => {
-        let unytys = "";
-        if (ingredient.quantity != undefined) {
-          unytys = ingredient.quantity;
-        }
         // rempli le tableau pour la dropdown correspondante
         ingredientArray.push(String([ingredient.ingredient.toLowerCase()]));
         /////////////
@@ -39,7 +36,9 @@ function recipesMainBar(recipes) {
                   <span class="recipes-ingredient">${
                     ingredient.ingredient
                   }</span>:
-                  <span class="recipes-quantity">${unytys}</span>
+                  <span class="recipes-quantity">${
+                    ingredient.quantity != undefined ? ingredient.unit : ""
+                  }</span>
                   <span class="recipes-unit">${
                     ingredient.unit != undefined ? ingredient.unit : ""
                   }</span>
@@ -93,5 +92,5 @@ function recipesMainBar(recipes) {
     return acc;
   }, "");
   ecouteLiDropdown(data);
-  return html;
+  return (recipesWrapper.innerHTML = html);
 }
