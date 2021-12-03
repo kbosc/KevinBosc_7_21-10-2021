@@ -145,7 +145,6 @@ function addComponents(item, data) {
   // supprime l'élément cliquer de la dropdown
   // item.remove();
   resetLiDropDown(data, item);
-  ecouteLiDropdown(data);
 }
 
 ///////////////
