@@ -1,11 +1,118 @@
-<mxfile host="app.diagrams.net" modified="2021-11-02T19:07:39.153Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36" etag="tXLtXe-4J89A0NRZyVUI" version="15.6.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-12-02T13:15:26.706Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36" etag="8hhU1bKRrRAE2RA30Lr2" version="15.8.8" type="github" pages="2">
   <diagram id="11DLtLcQ0q4nKdQ-IW-K" name="Page-1">
     <mxGraphModel dx="1220" dy="1112" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="NNSDG9ltlfEMwObovZCk-11" value="Lancer une recherche" style="ellipse;whiteSpace=wrap;html=1;fontSize=20;fontColor=default;strokeColor=default;strokeWidth=3;fillColor=default;align=center;" vertex="1" parent="1">
-          <mxGeometry x="20" y="40" width="150" height="80" as="geometry" />
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-2" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;" parent="1" source="NNSDG9ltlfEMwObovZCk-11" target="GyxKQUuqNOyYGBjIDTya-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NNSDG9ltlfEMwObovZCk-11" value="&lt;font style=&quot;font-size: 15px&quot;&gt;L&#39;utilisateur lance une recherche dans l&#39;input&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fontSize=20;strokeColor=#666666;strokeWidth=3;fillColor=#f5f5f5;align=center;rounded=0;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="57.5" y="10" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-1" value="&lt;font style=&quot;font-size: 15px&quot;&gt;Récupération de la valeur de l&#39;input&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;fontSize=20;strokeWidth=3;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="77.5" y="125" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-8" value="&lt;span&gt;Afin de s&#39;approcher au mieux de la recherche utilisateur, la valeur de l&#39;input est convertie en minuscule et retire les espaces.&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;" parent="1" vertex="1">
+          <mxGeometry x="790" y="10" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-66" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-13" target="GyxKQUuqNOyYGBjIDTya-65" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-13" value="&lt;font style=&quot;font-size: 15px&quot;&gt;Ingrédient = Valeur de l&#39;input&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;fontSize=20;strokeWidth=3;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="980" y="80" width="180" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-33" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;fontSize=13;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-21" target="GyxKQUuqNOyYGBjIDTya-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-21" value="itération sur chaque tableau d&#39;&lt;font color=&quot;#0000ff&quot;&gt;ingrédient&lt;/font&gt; dans data" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontSize=15;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="680" y="110" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-25" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-24" target="GyxKQUuqNOyYGBjIDTya-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-26" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-1" target="GyxKQUuqNOyYGBjIDTya-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-24" value="&lt;i&gt;variable &lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;html &lt;/font&gt;&lt;/b&gt;qui itère&amp;nbsp;sur les data recettes data avec reduce (acc)&amp;nbsp;&lt;/i&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontSize=15;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="460" y="110" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-32" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-24" target="GyxKQUuqNOyYGBjIDTya-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=18;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-31" target="GyxKQUuqNOyYGBjIDTya-47" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-31" target="GyxKQUuqNOyYGBjIDTya-62" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-31" value="&lt;div&gt;&lt;span style=&quot;font-size: 13px&quot;&gt;Valeur de l&#39;input = nom de la recette || description ||&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;b style=&quot;font-size: 20px&quot;&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;IsMatchIngredient&lt;/font&gt;&lt;/b&gt;&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;fontSize=15;align=center;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="450" y="270" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=18;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-36" target="GyxKQUuqNOyYGBjIDTya-54" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-36" value="quantity &lt;font color=&quot;#0000ff&quot;&gt;d&#39;ingrédient &lt;/font&gt;est undefined" style="rhombus;whiteSpace=wrap;html=1;fontSize=15;strokeColor=#b85450;fillColor=#f8cecc;" parent="1" vertex="1">
+          <mxGeometry x="72.5" y="460" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-42" value="&lt;u&gt;False&lt;/u&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="160" y="580" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-43" value="&lt;u&gt;True&lt;/u&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="290" y="315" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-49" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;fontSize=13;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-47" target="GyxKQUuqNOyYGBjIDTya-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-47" value="Variable &lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;ingrédients&amp;nbsp;&lt;/font&gt;&lt;/b&gt;qui itère&amp;nbsp;sur chaque tableau d&#39;ingrédient dans data avec reduce(acc)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontSize=15;strokeColor=#82b366;fillColor=#d5e8d4;" parent="1" vertex="1">
+          <mxGeometry x="45" y="310" width="215" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-54" value="push les &lt;font color=&quot;#0000ff&quot;&gt;ingrédients &lt;/font&gt;data dans un tableau pour la dropdown&lt;br&gt;&amp;nbsp;ET&lt;br&gt;accumule l&#39;html pour les &lt;font color=&quot;#0000ff&quot;&gt;ingrédients &lt;/font&gt;des cards recettes dans la variable &lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;ingrédient&lt;/font&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;fontSize=15;strokeColor=#d6b656;fillColor=#fff2cc;" parent="1" vertex="1">
+          <mxGeometry x="50" y="622.5" width="205" height="127.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=15;strokeWidth=3;" parent="1" source="GyxKQUuqNOyYGBjIDTya-31" target="GyxKQUuqNOyYGBjIDTya-57" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Dz67CkXoaktXKu4GuAfc-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;" edge="1" parent="1" source="GyxKQUuqNOyYGBjIDTya-57" target="GyxKQUuqNOyYGBjIDTya-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-57" value="&lt;font&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;accumule l&#39;html pour chaque card dans la variable &lt;/span&gt;&lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;html &lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;et appel la variable &lt;/span&gt;&lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;ingrédient &lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;qui contient l&#39;html des &lt;font color=&quot;#0000ff&quot;&gt;ingrédients &lt;/font&gt;pour l&#39;insérer à chaque card&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;align=center;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="410" y="520" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-62" value="remove le contenue des dropdown pour les recrée en fonction des cards présentes sur la page à l&#39;aide de la function&amp;nbsp;&lt;span style=&quot;color: rgb(166 , 226 , 46) ; background-color: rgb(39 , 40 , 34) ; font-family: &amp;#34;consolas&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; font-size: 14px&quot;&gt;arrayToHtmlLi&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=15;strokeColor=#d6b656;fillColor=#fff2cc;" parent="1" vertex="1">
+          <mxGeometry x="690" y="300" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-64" value="&lt;u&gt;false&lt;/u&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="630" y="310" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-65" value="&lt;font&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;Passer &lt;/span&gt;&lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;IsMatchIngredient&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;font-size: 15px&quot;&gt; à true&lt;/span&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;fontSize=20;strokeColor=#d6b656;strokeWidth=3;fillColor=#fff2cc;" parent="1" vertex="1">
+          <mxGeometry x="995" y="330" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-69" value="&lt;font&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;retourne la variable &lt;/span&gt;&lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;html &lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;font-size: 15px&quot;&gt;qui comprend le html de chaque card&lt;br&gt;ET&lt;br&gt;relance une écoute sur les dropdown&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;fontSize=20;strokeWidth=3;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="850" y="610" width="205" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="GyxKQUuqNOyYGBjIDTya-71" value="&lt;font style=&quot;font-size: 22px&quot;&gt;Algorithme 1&lt;/font&gt;" style="text;html=1;fillColor=#e6d0de;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;strokeColor=#996185;gradientColor=#d5739d;" parent="1" vertex="1">
+          <mxGeometry x="380" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BKEW_v0mJqis7EFnz9BJ-1" value="&lt;u&gt;True&lt;/u&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="545" y="490" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BKEW_v0mJqis7EFnz9BJ-2" value="&lt;u&gt;True&lt;/u&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="290" width="40" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="1iwCDWMgIz8k7EVZaU8_" name="Page-2">
+    <mxGraphModel dx="1220" dy="1112" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="D1E5VV4iOFXvNiiTyq4r-0" />
+        <mxCell id="D1E5VV4iOFXvNiiTyq4r-1" parent="D1E5VV4iOFXvNiiTyq4r-0" />
+        <mxCell id="aPlGfTYEOXeY_nC5mLVW-0" value="&lt;font style=&quot;font-size: 22px&quot;&gt;Algorithme 2&lt;br&gt;&lt;/font&gt;" style="text;html=1;fillColor=#e6d0de;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;strokeColor=#996185;gradientColor=#d5739d;" vertex="1" parent="D1E5VV4iOFXvNiiTyq4r-1">
+          <mxGeometry x="380" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PTbbZ5b7S-LYuo7BQXhY-0" value="&lt;span&gt;Afin de s&#39;approcher au mieux de la recherche utilisateur, la valeur de l&#39;input est convertie en minuscule et retire les espaces.&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=#7ea6e0;" vertex="1" parent="D1E5VV4iOFXvNiiTyq4r-1">
+          <mxGeometry x="790" y="10" width="360" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
