@@ -1,5 +1,7 @@
 // let valueMainSearch = valueMainBar.value;
+console.time("MainBarSearchAlgo2");
 function MainBarSearchAlgo2(data) {
+  console.time();
   const datas = data.recipes;
   let ingredientArray = [];
   let appareilArray = [];
@@ -8,8 +10,8 @@ function MainBarSearchAlgo2(data) {
   let recettes = [];
 
   recettes = datas.filter(function (e) {
-    for (let i = 0; i < e.ingredients.length; i++)
-      for (let j = 0; j < e.ustensils.length; j++)
+    for (let i = 0; i < e.ingredients.length; i++) {
+      for (let j = 0; j < e.ustensils.length; j++) {
         if (
           e.name.match(".*" + valueMainBar.value.toLowerCase() + ".*") ||
           e.appliance.match(".*" + valueMainBar.value.toLowerCase() + ".*") ||
@@ -21,6 +23,8 @@ function MainBarSearchAlgo2(data) {
         ) {
           return e;
         }
+      }
+    }
   });
   const html = recettes.reduce((acc, element) => {
     const listInngredients = element.ingredients.reduce((acc, ingredients) => {
@@ -84,5 +88,7 @@ function MainBarSearchAlgo2(data) {
     return acc;
   }, "");
   ecouteLiDropdown(data);
+  console.timeLog(label);
   return (recipesWrapper.innerHTML = html);
 }
+console.timeEnd("MainBarSearchAlgo2");
