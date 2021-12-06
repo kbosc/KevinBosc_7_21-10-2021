@@ -1,7 +1,6 @@
 // let valueMainSearch = valueMainBar.value;
 console.time("MainBarSearchAlgo2");
 function MainBarSearchAlgo2(data) {
-  console.time();
   const datas = data.recipes;
   let ingredientArray = [];
   let appareilArray = [];
@@ -88,7 +87,6 @@ function MainBarSearchAlgo2(data) {
     return acc;
   }, "");
   ecouteLiDropdown(data);
-  console.timeLog(label);
   return (recipesWrapper.innerHTML = html);
 }
 console.timeEnd("MainBarSearchAlgo2");
