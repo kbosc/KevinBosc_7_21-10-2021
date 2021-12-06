@@ -1,3 +1,4 @@
+console.time("recipesMainBar");
 function recipesMainBar(recipes) {
   let ingredientArray = [];
   let appareilArray = [];
@@ -95,3 +96,4 @@ function recipesMainBar(recipes) {
   ecouteLiDropdown(data);
   return (recipesWrapper.innerHTML = html);
 }
+console.timeEnd("recipesMainBar");
