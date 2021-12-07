@@ -1,6 +1,7 @@
 // let valueMainSearch = valueMainBar.value;
 console.time("MainBarSearchAlgo2");
 function MainBarSearchAlgo2(data) {
+  // console.log(data);
   const datas = data.recipes;
   let ingredientArray = [];
   let appareilArray = [];
