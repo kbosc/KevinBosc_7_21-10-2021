@@ -17,7 +17,7 @@ document.addEventListener(onFetchData.name, (e) => {
   recipesWrapper.innerHTML = recipesCardsFactory(data.recipes);
   valueMainBar.addEventListener("keyup", () => {
     if (valueMainBar.value.length > 2) {
-      recipesMainBar(data.recipes);
+      recipesMainBar(data);
       // recipesWrapper.innerHTML = recipesMainBar(data.recipes);
     }
     if (valueMainBar.value.length <= 2) {
