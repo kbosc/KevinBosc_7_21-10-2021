@@ -16,7 +16,7 @@ function resetLiDropDown(data, item) {
       });
       //   comparer chaque nom de la card avec ceux de la data et
       // si match chercher ustensils et appareil pour push dans array
-      data.forEach((e) => {
+      data.recipes.forEach((e) => {
         if (
           NameChildOfRecipes.textContent.toLowerCase().replace(/\s/g, "") ===
           e.name.toLowerCase().replace(/\s/g, "")

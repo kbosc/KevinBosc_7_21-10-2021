@@ -3,7 +3,6 @@ function recipesMainBar(data) {
   let ingredientArray = [];
   let appareilArray = [];
   let ustensileArray = [];
-  let newArray = [];
   let recettes = [];
 
   for (let h = 0; h < datas.length; h++) {
@@ -28,7 +27,6 @@ function recipesMainBar(data) {
             String([datas[h].ingredients[i].ingredient.toLowerCase()])
           );
           appareilArray.push(String([datas[h].appliance.toLowerCase()]));
-          recettes.push(datas[h]);
           ustensileArray.push(String([datas[h].ustensils[j].toLowerCase()]));
           recettes.push(datas[h]);
         }
@@ -48,22 +46,54 @@ function recipesMainBar(data) {
       else return objs.indexOf(item) >= 0 ? false : objs.push(item);
     });
   }
-  console.log(uniq(recettes));
-  console.log(uniq(ingredientArray));
-  console.log(uniq(appareilArray));
-  console.log(uniq(ustensileArray));
   const recette = uniq(recettes);
+  let html = "";
+  recipesWrapper.innerHTML = "";
   for (let k = 0; k < recette.length; k++) {
-    for (let i = 0; i < recette[k].ingredients.length; i++) {
-      for (let j = 0; j < recette[k].ustensils.length; j++) {
-        console.log(recette[k]);
-        console.log(recette[k].ingredients.ingredient);
-        console.log(recette[k].description);
-        console.log(recette[k].name);
-      }
+    html += `
+        <div class="recipes">
+        <div class="recipes__img"></div>
+        <div class="recipes__resume">
+        <div class="recipes__resume__up">
+        <h2 class="recipes__resume__up__name">${recette[k].name}</h2>
+        <p>
+        <img
+        src="./img/svg/clock.svg"
+        alt="horloge pour définir le temps de préparation"
+        />
+        <span class="recipes__resume__up__time"> ${recette[k].time} </span>min
+        </p>
+        </div>
+        <div class="recipes__resume__bottom">
+        <ul class="recipes__resume__bottom__ingredients">`;
+    for (let l = 0; l < recette[k].ingredients.length; l++) {
+      html += `<li>
+        <span class="recipes-ingredient">${
+          recette[k].ingredients[l].ingredient
+        }</span>:
+        <span class="recipes-quantity">${
+          recette[k].ingredients[l].quantity != undefined
+            ? recette[k].ingredients[l].quantity
+            : ""
+        }</span>
+        <span class="recipes-unit">${
+          recette[k].ingredients[l].unit != undefined
+            ? recette[k].ingredients[l].unit
+            : ""
+        }</span>
+        </li>`;
     }
+    html += `</ul>
+       <div class="recipes__resume__bottom__description">
+        <p>
+        ${recette[k].description}
+        </p>
+        </div>
+        </div>
+        </div>
+        </div>`;
   }
-  // recipesWrapper.innerHTML = html
+  recipesWrapper.innerHTML = html;
 
   //  à chaque actualisation de la recherche main bar vide l'html dropdown correspondant
   ulIngredient.innerHTML = "";

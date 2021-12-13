@@ -1,11 +1,11 @@
-function ecouteLiDropdown(recipes) {
-  data = recipes;
+function ecouteLiDropdown(datas) {
+  data = datas.recipes;
   const liIngredient = document.querySelectorAll(
     ".dropdown__ingredient .block-links ul li"
   );
   liIngredient.forEach(function (item) {
     item.addEventListener("click", function () {
-      addComponents(item, data);
+      addComponents(item, datas);
     });
   });
   const liAppareil = document.querySelectorAll(
@@ -14,7 +14,7 @@ function ecouteLiDropdown(recipes) {
   liAppareil.forEach(function (item) {
     // console.log(data);
     item.addEventListener("click", function () {
-      addComponents(item, data);
+      addComponents(item, datas);
     });
   });
   const liUstensiles = document.querySelectorAll(
@@ -22,7 +22,7 @@ function ecouteLiDropdown(recipes) {
   );
   liUstensiles.forEach(function (item) {
     item.addEventListener("click", function () {
-      addComponents(item, data);
+      addComponents(item, datas);
     });
   });
   btnIngredient.addEventListener("keyup", () => {
@@ -44,7 +44,7 @@ function ecouteLiDropdown(recipes) {
     dropDownFilter(btnUstensiles, liUstensilesFilter);
   });
 }
-function addComponents(item, data) {
+function addComponents(item, datas) {
   // creation d'une div et défini ou injecter les components
   const div = document.createElement("div");
   div.classList.add("component");
@@ -83,7 +83,7 @@ function addComponents(item, data) {
         NameChildOfRecipes = cardParent.querySelector(
           ".recipes__resume__up__name"
         );
-        data.forEach((e) => {
+        datas.recipes.forEach((e) => {
           if (
             NameChildOfRecipes.textContent.toLowerCase().replace(/\s/g, "") ===
             e.name.toLowerCase().replace(/\s/g, "")
@@ -108,7 +108,7 @@ function addComponents(item, data) {
         NameChildOfRecipes = cardParent.querySelector(
           ".recipes__resume__up__name"
         );
-        data.forEach((e) => {
+        datas.recipes.forEach((e) => {
           if (
             NameChildOfRecipes.textContent.toLowerCase().replace(/\s/g, "") ===
             e.name.toLowerCase().replace(/\s/g, "")
@@ -144,7 +144,7 @@ function addComponents(item, data) {
   `;
   // supprime l'élément cliquer de la dropdown
   // item.remove();
-  resetLiDropDown(data, item);
+  resetLiDropDown(datas, item);
 }
 
 ///////////////
@@ -165,27 +165,62 @@ function removeComponents(item, data) {
       case elemParentClass.contains("component-ingredient"):
         whenRemoveComponent(data);
         // console.log("ingredient");
-        ulIngredient.appendChild(itemLI);
+        //ulIngredient.appendChild(itemLI);
         break;
       case elemParentClass.contains("component-appareil"):
         whenRemoveComponent(data);
         // console.log("appareil");
-        ulAppareil.appendChild(itemLI);
+        //ulAppareil.appendChild(itemLI);
         break;
       case elemParentClass.contains("component-ustensiles"):
         whenRemoveComponent(data);
         // console.log("ustensiles");
-        ulUstensiles.appendChild(itemLI);
+        //ulUstensiles.appendChild(itemLI);
         break;
       default:
         console.log("component inconnu");
     }
     //   suppression du component
     itemLI.addEventListener("click", function () {
-      addComponents(itemLI, data.recipes);
+      addComponents(itemLI, data);
     });
+
     if (componentsWrapper.childNodes.length === 0) {
-      recipesWrapper.innerHTML = recipesMainBar(data.recipes);
+      recipesMainBar(data);
+    } else {
+      let ingredientArray = [];
+      let appareilArray = [];
+      let ustensileArray = [];
+
+      const recipes = document.querySelectorAll(".recipes");
+      recipes.forEach((cardParent) => {
+        if (cardParent.style.display != "none") {
+          NameChildOfRecipes = cardParent.querySelector(
+            ".recipes__resume__up__name"
+          );
+
+          data.recipes.forEach((e) => {
+            if (
+              NameChildOfRecipes.textContent
+                .toLowerCase()
+                .replace(/\s/g, "") === e.name.toLowerCase().replace(/\s/g, "")
+            ) {
+              e.ingredients.forEach((item) => {
+                ingredientArray.push(item.ingredient);
+              });
+              appareilArray.push(e.appliance);
+              e.ustensils.forEach((item) => {
+                ustensileArray.push(item);
+              });
+            }
+          });
+        }
+      });
+
+      arrayToHtmlLi(ingredientArray, ulIngredient);
+      arrayToHtmlLi(appareilArray, ulAppareil);
+      arrayToHtmlLi(ustensileArray, ulUstensiles);
+      ecouteLiDropdown(data);
     }
   }
 }
