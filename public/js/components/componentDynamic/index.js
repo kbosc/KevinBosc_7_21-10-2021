@@ -12,7 +12,6 @@ function ecouteLiDropdown(datas) {
     ".dropdown__appareil .block-links ul li"
   );
   liAppareil.forEach(function (item) {
-    // console.log(data);
     item.addEventListener("click", function () {
       addComponents(item, datas);
     });
@@ -142,12 +141,9 @@ function addComponents(item, datas) {
   aria-label="cross that closes the selection"
   />
   `;
-  // supprime l'élément cliquer de la dropdown
-  // item.remove();
   resetLiDropDown(datas, item);
 }
 
-///////////////
 function removeComponents(item, data) {
   let initElem = item.target;
   //   suppression du component et creation d'un li dans le dropdown
@@ -165,22 +161,18 @@ function removeComponents(item, data) {
       case elemParentClass.contains("component-ingredient"):
         whenRemoveComponent(data);
         // console.log("ingredient");
-        //ulIngredient.appendChild(itemLI);
         break;
       case elemParentClass.contains("component-appareil"):
         whenRemoveComponent(data);
         // console.log("appareil");
-        //ulAppareil.appendChild(itemLI);
         break;
       case elemParentClass.contains("component-ustensiles"):
         whenRemoveComponent(data);
         // console.log("ustensiles");
-        //ulUstensiles.appendChild(itemLI);
         break;
       default:
         console.log("component inconnu");
     }
-    //   suppression du component
     itemLI.addEventListener("click", function () {
       addComponents(itemLI, data);
     });
