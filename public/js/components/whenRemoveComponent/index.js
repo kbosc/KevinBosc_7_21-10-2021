@@ -1,11 +1,9 @@
 function whenRemoveComponent(data) {
   const components = document.querySelectorAll(".component");
   const recipes = document.querySelectorAll(".recipes");
-  // Parcourir (foreach) la liste des components, variable inner text du component
-  //  variable la classe du parent, condition en fonction de la classe parent (switch/case ?),
-  //  itérer dans la data en fonction de la class, itérer dans les recipes,
-  //  Si (Condition) variable inner text component == element de data on display block
-  // la recipes soit l'élément recipes.
+  ulIngredient.innerHTML = "";
+  ulAppareil.innerHTML = "";
+  ulUstensiles.innerHTML = "";
 
   let valuesComponents = [];
   components.forEach((component) => {
@@ -14,8 +12,6 @@ function whenRemoveComponent(data) {
       .replace(/\s/g, "");
     valuesComponents.push(componentText);
   });
-
-  /* chantier */
 
   recipes.forEach((card) => {
     childOfRecipes = card.querySelectorAll(".recipes-ingredient");
