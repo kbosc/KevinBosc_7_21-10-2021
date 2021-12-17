@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-17T13:49:55.150Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" etag="wzU7ACc3VCjFTKGavEdL" version="15.9.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-12-17T14:27:10.641Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" etag="awfqk5FsYKDjx56CfrYS" version="15.9.6" type="github" pages="2">
   <diagram id="11DLtLcQ0q4nKdQ-IW-K" name="Page-1">
     <mxGraphModel dx="1422" dy="705" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -81,8 +81,8 @@
         <mxCell id="RWWKRG0oMQzYlbA7-Doh-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;" parent="D1E5VV4iOFXvNiiTyq4r-1" source="JzsUhIZQl9w3UOIY0Sud-0" target="RWWKRG0oMQzYlbA7-Doh-0" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="JzsUhIZQl9w3UOIY0Sud-0" value="&lt;font style=&quot;font-size: 15px&quot;&gt;Récupération de la valeur de l&#39;input&lt;/font&gt;" style="whiteSpace=wrap;html=1;rounded=0;fontSize=20;strokeWidth=3;fillColor=#fff2cc;strokeColor=#d6b656;" parent="D1E5VV4iOFXvNiiTyq4r-1" vertex="1">
-          <mxGeometry x="70" y="140" width="150" height="50" as="geometry" />
+        <mxCell id="JzsUhIZQl9w3UOIY0Sud-0" value="&lt;span style=&quot;font-size: 15px&quot;&gt;Récupération de la valeur de l&#39;input lorsque l&#39;utilisateur à rentrer 3 caractère minimum&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;fontSize=20;strokeWidth=3;fillColor=#fff2cc;strokeColor=#d6b656;" parent="D1E5VV4iOFXvNiiTyq4r-1" vertex="1">
+          <mxGeometry x="40" y="140" width="180" height="140" as="geometry" />
         </mxCell>
         <mxCell id="1SXh3DYduKJZJxUFYwPZ-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=13;strokeWidth=3;" parent="D1E5VV4iOFXvNiiTyq4r-1" source="RWWKRG0oMQzYlbA7-Doh-0" target="1SXh3DYduKJZJxUFYwPZ-0" edge="1">
           <mxGeometry relative="1" as="geometry" />
